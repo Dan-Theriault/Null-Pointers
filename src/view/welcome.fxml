@@ -17,7 +17,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <BorderPane prefHeight="452.0" prefWidth="463.0" style="-fx-background-color: #659EC7; -fx-background-image: water;">
+      <BorderPane prefHeight="452.0" prefWidth="463.0" style="-fx-background-color: #659EC7;">
          <top>
             <Label alignment="CENTER" prefHeight="123.0" prefWidth="463.0" text="Water App" textFill="#b4f5eb" BorderPane.alignment="CENTER">
                <font>
