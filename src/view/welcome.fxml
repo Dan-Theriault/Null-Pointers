@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.welcomeController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <BorderPane prefHeight="452.0" prefWidth="463.0" style="-fx-background-color: #659EC7; -fx-background-image: water;">
+         <top>
+            <Label alignment="CENTER" prefHeight="123.0" prefWidth="463.0" text="Water App" textFill="#b4f5eb" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="72.0" />
+               </font>
+            </Label>
+         </top>
+         <bottom>
+            <GridPane prefHeight="178.0" prefWidth="463.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="179.0" minHeight="3.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="182.0" minHeight="0.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="190.0" minHeight="0.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="127.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="loginbutton" alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="141.0" style="-fx-background-color: #2554C7;" text="Login" textFill="#b4f5eb" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="60.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="registerbutton" alignment="CENTER" layoutX="25.0" layoutY="365.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="141.0" style="-fx-background-color: #2554C7;" text="Register" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="35.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </bottom>
+         <center>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="254.0" text="insert image or something here????" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</GridPane>
