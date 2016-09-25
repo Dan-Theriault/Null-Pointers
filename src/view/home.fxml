@@ -12,7 +12,7 @@
       <Pane blendMode="DARKEN" prefHeight="57.0" prefWidth="598.0">
          <children>
             <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SafeWater" />
-            <Button fx:id="logoutButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" text="Logout" />
+            <Button fx:id="logoutButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutPressed" text="Logout" />
          </children>
          <opaqueInsets>
             <Insets bottom="2.0" />
