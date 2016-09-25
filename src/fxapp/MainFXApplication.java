@@ -15,15 +15,10 @@ public class MainFXApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        Parent root = FXMLLoader.load(getClass().getResource("../view/welcome.fxml"));
+        primaryStage.setTitle("Safe Water App");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
-
-        Database db = new Database();
-        System.out.println(db.logIn("user", "pass"));
-        System.out.println(db.logIn("This", "wont work"));
-
     }
 
 
