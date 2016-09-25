@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+defaultTasks 'jar'
+
+dependencies {
+    compile files('lib/*')
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class' : '' // ??? 
+        attributes 'Class-Path' : '../../lib/*'
+
+    }
+}
+
