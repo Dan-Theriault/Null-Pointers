@@ -41,11 +41,7 @@ public class Database {
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(final Document document) {
-                if (document.get("password").equals(password)) {
-                    isTrue[0] = true;
-                } else {
-                    isTrue[0] = false;
-                }
+                isTrue[0] = document.get("password").equals(password);
             }
         });
 

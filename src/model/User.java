@@ -1,6 +1,7 @@
 package model;
 
-/**
+/** Class representing a User.
+ *
  * Created by dtheriault3 on 9/25/16.
  */
 public class User {

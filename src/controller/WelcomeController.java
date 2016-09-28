@@ -2,21 +2,16 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import fxapp.MainFXApplication;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
+/** Controller class for the welcome page
+ *
  * Created by nickhutchinson on 9/27/16.
  */
 public class WelcomeController implements Initializable{
-    @FXML
-    private Button loginbutton;
-
-    @FXML
-    private Button registerbutton;
 
     private MainFXApplication mainApplication;
 
