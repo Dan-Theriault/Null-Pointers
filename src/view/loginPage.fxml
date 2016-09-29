@@ -61,7 +61,7 @@
       <ButtonBar layoutX="178.0" layoutY="162.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
           <Button fx:id="okButton" defaultButton="true" mnemonicParsing="false" onAction="#onOkButtonPressed" text="OK" />
-            <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#onCancelButtonClicked" text="Cancel" />
+            <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#onCancelButtonPressed" text="Cancel" />
         </buttons>
       </ButtonBar>
    </children>

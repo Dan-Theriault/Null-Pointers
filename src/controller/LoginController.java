@@ -49,7 +49,7 @@ public class LoginController implements Initializable{
     }
 
     @FXML
-    private void onCancelButtonClicked() throws Exception {
+    private void onCancelButtonPressed() throws Exception {
         mainApplication.gotoWelcome();
     }
 

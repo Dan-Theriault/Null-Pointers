@@ -29,6 +29,8 @@ public class WelcomeController implements Initializable{
         mainApplication.gotoLogin();
     }
 
-
-
+    @FXML
+    private void onRegisterButtonPressed() throws Exception {
+        mainApplication.gotoNewUserRegistration();
+    }
 }

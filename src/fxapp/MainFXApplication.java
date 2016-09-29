@@ -52,6 +52,12 @@ public class MainFXApplication extends Application {
         home.setApp(this);
     }
 
+    public void gotoNewUserRegistration() throws Exception {
+        NewUserRegistrationController newUserRegistration =
+                (NewUserRegistrationController) replaceSceneContent("../view/newUserRegistration.fxml");
+        newUserRegistration.setApp(this);
+    }
+
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setBuilderFactory(new JavaFXBuilderFactory());

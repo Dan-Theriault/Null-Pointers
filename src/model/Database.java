@@ -2,6 +2,7 @@ package model;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
 
 import org.bson.Document;
 import com.mongodb.Block;
@@ -49,5 +50,17 @@ public class Database {
             return false;
         }
         return isTrue[0];
+    }
+
+    public void registerUser(String name, String username, String password,
+            AccountType accountType) {
+
+        MongoCollection<Document> registrations = db.getCollection("registrations");
+        Document newUser = new Document("name", name)
+                .append("username", username)
+                .append("password", password)
+                .append("accountType", accountType.getAccountTypeValue());
+
+        registrations.insertOne(newUser);
     }
 }

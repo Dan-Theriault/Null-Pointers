@@ -41,7 +41,7 @@
                         <Insets left="60.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button fx:id="registerbutton" alignment="CENTER" layoutX="25.0" layoutY="365.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="141.0" style="-fx-background-color: #2554C7;" text="Register" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button fx:id="registerbutton" alignment="CENTER" layoutX="25.0" layoutY="365.0" mnemonicParsing="false" onAction="#onRegisterButtonPressed" prefHeight="82.0" prefWidth="141.0" style="-fx-background-color: #2554C7;" text="Register" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="24.0" />
                      </font>
