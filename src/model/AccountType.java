@@ -4,10 +4,10 @@ package model;
  * Created by nickhutchinson on 9/28/16.
  */
 public enum AccountType {
-    USER("User"),
-    WORKER("Worker"),
-    MANAGER("Manager"),
-    ADMIN("Administrator");
+    USER("USER"),
+    WORKER("WORKER"),
+    MANAGER("MANAGER"),
+    ADMIN("ADMIN");
     private String accountTypeValue;
 
     AccountType(String value) {

@@ -33,4 +33,9 @@ public class HomeController implements Initializable{
     private void onUsersButtonPressed() throws Exception {
         mainApplication.gotoUsersList();
     }
+
+    @FXML
+    private void onRequestsButtonPressed() throws Exception {
+        mainApplication.gotoRequestsList();
+    }
 }

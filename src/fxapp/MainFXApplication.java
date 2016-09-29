@@ -63,6 +63,12 @@ public class MainFXApplication extends Application {
         userList.setApp(this);
     }
 
+    public void gotoRequestsList() throws Exception {
+        UserRequestListController requestListController = (UserRequestListController)
+                replaceSceneContent("../view/userReqestsList.fxml");
+        requestListController.setApp(this);
+    }
+
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setBuilderFactory(new JavaFXBuilderFactory());

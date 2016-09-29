@@ -4,11 +4,14 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 
+import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 import com.mongodb.Block;
 import com.mongodb.client.FindIterable;
 
 import java.util.ArrayList;
+
+import static com.mongodb.client.model.Filters.eq;
 
 /**
  * Created by nickhutchinson on 9/21/16.
@@ -76,7 +79,7 @@ public class Database {
                 User user = new User((String) document.get("title"),
                         (String) document.get("name"),
                         (String) document.get("username"),
-                        (AccountType) document.get("accountType"),
+                        AccountType.valueOf((String) document.get("accountType")),
                         (String) document.get("emailAddress"),
                         (String) document.get("homeAddress"),
                         (String) document.get("password"));
@@ -85,4 +88,27 @@ public class Database {
         });
         return userList;
     }
+
+    public ArrayList<User> getRequests() {
+        FindIterable<Document> iterable = db.getCollection("registrations").find();
+
+        ArrayList<User> requestsList = new ArrayList<>();
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(Document document) {
+                User user = new User(
+                        (String) document.get("name"),
+                        (String) document.get("username"),
+                        AccountType.valueOf((String) document.get("accountType")),
+                        (String) document.get("password"));
+                requestsList.add(user);
+            }
+        });
+        return requestsList;
+    }
+
+    public void deleteRequest(String username) {
+        db.getCollection("registrations").deleteOne(eq("username", username));
+    }
+
 }

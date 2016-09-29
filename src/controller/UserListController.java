@@ -100,4 +100,9 @@ public class UserListController implements Initializable {
         }
     }
 
+    @FXML
+    private void onBackButtonPressed() throws Exception {
+        mainApplication.gotoHome();
+    }
+
 }
