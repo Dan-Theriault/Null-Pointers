@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 /**
  * Created by nickhutchinson on 9/28/16.
  */
-public class RegisteredUsersController implements Initializable {
+public class UserListController implements Initializable {
 
     private MainFXApplication mainApplication;
 
