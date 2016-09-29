@@ -10,7 +10,7 @@ public enum AccountType {
     ADMIN("Administrator");
     private String accountTypeValue;
 
-    AccountType (String value) {
+    AccountType(String value) {
         this.accountTypeValue = value;
     }
 
@@ -18,4 +18,7 @@ public enum AccountType {
         return accountTypeValue;
     }
 
+    public void setAccountTypeValue(String accountTypeValue) {
+        this.accountTypeValue = accountTypeValue;
+    }
 }

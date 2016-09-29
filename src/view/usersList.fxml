@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserListController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="461.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserListController">
    <children>
       <GridPane layoutX="1.0" layoutY="5.0" prefHeight="389.0" prefWidth="600.0">
         <columnConstraints>
@@ -20,7 +20,7 @@
           <RowConstraints maxHeight="358.0" minHeight="10.0" prefHeight="358.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ListView prefHeight="139.0" prefWidth="180.0" GridPane.rowIndex="1" />
+            <ListView fx:id="userListView" onMouseClicked="#onListViewClicked" prefHeight="139.0" prefWidth="180.0" GridPane.rowIndex="1" />
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="Users" />
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="451.0" text="User Details" GridPane.columnIndex="1" />
             <GridPane prefHeight="358.0" prefWidth="402.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -43,12 +43,12 @@
                   <Label layoutX="10.0" layoutY="152.0" text="Email address:" GridPane.rowIndex="4" />
                   <Label layoutX="10.0" layoutY="212.0" text="Username:" GridPane.rowIndex="2" />
                   <Label layoutX="10.0" layoutY="271.0" text="Home address:" GridPane.rowIndex="5" />
-                  <Label text="title" GridPane.columnIndex="1" />
-                  <Label layoutX="107.0" layoutY="32.0" text="name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label layoutX="107.0" layoutY="92.0" text="username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label layoutX="107.0" layoutY="152.0" text="accountype" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label layoutX="107.0" layoutY="212.0" text="emailaddress" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label layoutX="107.0" layoutY="271.0" text="homeaddress" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="titleLable" text="title" GridPane.columnIndex="1" />
+                  <Label fx:id="nameLabel" layoutX="107.0" layoutY="32.0" text="name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="usernameLabel" layoutX="107.0" layoutY="92.0" text="username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="accountTypeLabel" layoutX="107.0" layoutY="152.0" text="accountype" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="emailAddressLabel" layoutX="107.0" layoutY="212.0" text="emailaddress" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="homeAddressLabel" layoutX="107.0" layoutY="271.0" text="homeaddress" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />

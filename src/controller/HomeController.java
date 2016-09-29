@@ -28,4 +28,9 @@ public class HomeController implements Initializable{
     private void handleLogoutPressed() throws Exception {
         mainApplication.gotoWelcome();
     }
+
+    @FXML
+    private void onUsersButtonPressed() throws Exception {
+        mainApplication.gotoUsersList();
+    }
 }

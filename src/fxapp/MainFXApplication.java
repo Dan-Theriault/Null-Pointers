@@ -58,6 +58,11 @@ public class MainFXApplication extends Application {
         newUserRegistration.setApp(this);
     }
 
+    public void gotoUsersList() throws Exception {
+        UserListController userList = (UserListController) replaceSceneContent("../view/usersList.fxml");
+        userList.setApp(this);
+    }
+
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setBuilderFactory(new JavaFXBuilderFactory());

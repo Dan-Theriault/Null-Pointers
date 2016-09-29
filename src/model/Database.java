@@ -8,6 +8,8 @@ import org.bson.Document;
 import com.mongodb.Block;
 import com.mongodb.client.FindIterable;
 
+import java.util.ArrayList;
+
 /**
  * Created by nickhutchinson on 9/21/16.
  *
@@ -62,5 +64,25 @@ public class Database {
                 .append("accountType", accountType.getAccountTypeValue());
 
         registrations.insertOne(newUser);
+    }
+
+    public ArrayList<User> getUsers() {
+        FindIterable<Document> iterable = db.getCollection("users").find();
+
+        ArrayList<User> userList = new ArrayList<>();
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(Document document) {
+                User user = new User((String) document.get("title"),
+                        (String) document.get("name"),
+                        (String) document.get("username"),
+                        (AccountType) document.get("accountType"),
+                        (String) document.get("emailAddress"),
+                        (String) document.get("homeAddress"),
+                        (String) document.get("password"));
+                userList.add(user);
+            }
+        });
+        return userList;
     }
 }

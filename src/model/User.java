@@ -28,10 +28,13 @@ public class User {
         this.homeAddress = homeAddress;
     }
 
+
     @Override
     public String toString() {
-        return "User{}";
+        return "User{" + title + " " + name + " " + username + " " + accountType + " " + emailAddress
+                + " " + homeAddress + " " + password + "}";
     }
+
 
     public String getTitle() {
         return title;
