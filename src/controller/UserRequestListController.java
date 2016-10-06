@@ -89,6 +89,18 @@ public class UserRequestListController implements Initializable {
     @FXML
     private void onAcceptButtonPressed() throws Exception {
 
+
+        if (currentUser != null) {
+
+            mainApplication.db.confirmUser(currentUser.getName(), currentUser.getUsername(), currentUser.getPassword(), currentUser.getAccountType());
+            mainApplication.db.deleteRequest(currentUser.getUsername());
+            selectListItem(-1);
+            loadList();
+        }
+
+
+
+
     }
 
     private void loadList() {

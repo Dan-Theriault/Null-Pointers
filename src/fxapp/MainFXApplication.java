@@ -1,5 +1,6 @@
 package fxapp;
 
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import controller.*;
 import javafx.fxml.Initializable;
 import javafx.fxml.JavaFXBuilderFactory;
@@ -10,6 +11,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.User;
+
 import java.io.InputStream;
 
 /** This is the runner for the JavaFX application.
@@ -19,6 +22,7 @@ import java.io.InputStream;
 public class MainFXApplication extends Application {
 
     public Database db = new Database();
+
 
     private Stage stage;
 
@@ -67,6 +71,13 @@ public class MainFXApplication extends Application {
         UserRequestListController requestListController = (UserRequestListController)
                 replaceSceneContent("../view/userReqestsList.fxml");
         requestListController.setApp(this);
+    }
+
+    public void gotoProfile() throws Exception {
+
+        ProfileController profileController = (ProfileController) replaceSceneContent("../view/profile.fxml");
+        profileController.setApp(this);
+
     }
 
     private Initializable replaceSceneContent(String fxml) throws Exception {

@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import model.User;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -41,6 +42,14 @@ public class LoginController implements Initializable{
         Boolean isLoginValid = mainApplication.db.logIn(userField.getText(),
                 passField.getText());
         if (isLoginValid) {
+             //mainApplication.db.setGlobalUser(mainApplication.db.findUser(userField.getText()));
+
+            User temp = mainApplication.db.findUser(userField.getText());
+
+            mainApplication.db.setGlobalUser(temp);
+
+            System.out.println(temp);
+
             mainApplication.gotoHome();
         } else {
             responseField.setText("Invalid Login Credentials");

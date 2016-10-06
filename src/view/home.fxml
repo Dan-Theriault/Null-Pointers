@@ -17,6 +17,7 @@
                   <Button fx:id="logoutButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutPressed" text="Logout" />
                   <Button fx:id="usersButton" layoutX="100.0" layoutY="16.0" mnemonicParsing="false" onAction="#onUsersButtonPressed" text="Users" />
                   <Button layoutX="164.0" layoutY="16.0" mnemonicParsing="false" onAction="#onRequestsButtonPressed" text="Requests" />
+                  <Button fx:id="profileButton" layoutX="250.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleProfilePressed" text="My Profile" />
                </children>
                <opaqueInsets>
                   <Insets bottom="2.0" />

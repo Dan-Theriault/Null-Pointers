@@ -27,6 +27,8 @@ public class HomeController implements Initializable{
     @FXML
     private void handleLogoutPressed() throws Exception {
         mainApplication.gotoWelcome();
+
+
     }
 
     @FXML
@@ -37,5 +39,12 @@ public class HomeController implements Initializable{
     @FXML
     private void onRequestsButtonPressed() throws Exception {
         mainApplication.gotoRequestsList();
+    }
+
+    @FXML
+    private void handleProfilePressed() throws Exception {
+
+        mainApplication.gotoProfile();
+
     }
 }
