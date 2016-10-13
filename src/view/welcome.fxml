@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -10,11 +12,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WelcomeController">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WelcomeController">
    <children>
-      <BorderPane prefHeight="452.0" prefWidth="463.0" style="-fx-background-color: #659EC7;">
+      <BorderPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #659EC7;">
          <top>
-            <Label alignment="CENTER" prefHeight="123.0" prefWidth="463.0" text="Water App" textFill="#b4f5eb" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" prefHeight="123.0" prefWidth="463.0" text="Safe Water" textFill="#b4f5eb" BorderPane.alignment="CENTER">
                <font>
                   <Font size="72.0" />
                </font>
@@ -38,7 +40,7 @@
                         <Font size="24.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets left="60.0" />
+                        <Insets left="100.0" />
                      </GridPane.margin>
                   </Button>
                   <Button fx:id="registerbutton" alignment="CENTER" layoutX="25.0" layoutY="365.0" mnemonicParsing="false" onAction="#onRegisterButtonPressed" prefHeight="82.0" prefWidth="141.0" style="-fx-background-color: #2554C7;" text="Register" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -46,14 +48,21 @@
                         <Font size="24.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets left="35.0" />
+                        <Insets left="43.0" />
                      </GridPane.margin>
                   </Button>
                </children>
             </GridPane>
          </bottom>
          <center>
-            <Label alignment="CENTER" prefHeight="60.0" prefWidth="254.0" text="insert image or something here????" BorderPane.alignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="191.0" prefWidth="254.0" BorderPane.alignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="291.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@droplet.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
          </center>
       </BorderPane>
    </children>
