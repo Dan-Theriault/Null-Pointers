@@ -87,7 +87,7 @@ public class MainFXApplication extends Application {
         try (InputStream in = getClass().getResourceAsStream(fxml)) {
             page = loader.load(in);
         }
-        Scene scene = new Scene(page, 800, 600);
+        Scene scene = new Scene(page, 600, 600);
         stage.setScene(scene);
         stage.sizeToScene();
         return (Initializable) loader.getController();
