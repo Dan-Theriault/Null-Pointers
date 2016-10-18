@@ -4,13 +4,11 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 
-import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 import com.mongodb.Block;
 import com.mongodb.client.FindIterable;
 
 import java.util.ArrayList;
-import org.bson.Document;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -158,6 +156,27 @@ public class Database {
             }
         });
         return requestsList;
+    }
+
+    public ArrayList<SourceReport> getReports() {
+        FindIterable<Document> iterable = db.getCollection("sourceReports").find();
+
+        ArrayList<SourceReport> reportList = new ArrayList<>();
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(Document document) {
+                SourceReport report = new SourceReport(
+                        (String) document.get("reporterName"),
+                        (String) document.get("reportDate"),
+                        (String) document.get("reportNumber"),
+                        (String) document.get("reportLocation"),
+                        (String) document.get("waterType"),
+                        (String) document.get("waterCondition")
+                );
+                reportList.add(report);
+            }
+        });
+        return reportList;
     }
 
     public void deleteRequest(String username) {
