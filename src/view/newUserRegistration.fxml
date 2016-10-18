@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewUserRegistrationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #659EC7;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewUserRegistrationController">
    <children>
       <GridPane layoutX="7.0" layoutY="61.0" prefHeight="284.0" prefWidth="586.0">
         <columnConstraints>
@@ -29,53 +29,71 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="usernameTextField" promptText="enter your desired username" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="usernameTextField" promptText="enter your desired username" style="-fx-background-color: #b4f5eb;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </TextField>
-            <ComboBox fx:id="accountTypeComboBox" prefHeight="27.0" prefWidth="491.0" promptText="choose account type" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <ComboBox fx:id="accountTypeComboBox" prefHeight="27.0" prefWidth="491.0" promptText="choose account type" style="-fx-background-color: #b4f5eb;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </ComboBox>
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="245.0" text="User Name:" GridPane.rowIndex="1" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="175.0" text="Confirm Password:" GridPane.rowIndex="3" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="185.0" text="Password:" GridPane.rowIndex="2" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="201.0" text="Account Type:" GridPane.rowIndex="4" />
-            <PasswordField fx:id="passwordTextField" promptText="enter your password" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="245.0" text="User Name:" textFill="#b4f5eb" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="175.0" text="Confirm Password:" textFill="#b4f5eb" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="185.0" text="Password:" textFill="#b4f5eb" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="201.0" text="Account Type:" textFill="#b4f5eb" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <PasswordField fx:id="passwordTextField" promptText="enter your password" style="-fx-background-color: #b4f5eb;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </PasswordField>
-            <PasswordField fx:id="confirmPasswordTextField" promptText="confirm your password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <PasswordField fx:id="confirmPasswordTextField" promptText="confirm your password" style="-fx-background-color: #b4f5eb;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </PasswordField>
-            <TextField fx:id="nameTextField" prefHeight="27.0" prefWidth="643.0" promptText="enter your name" GridPane.columnIndex="1">
+            <TextField fx:id="nameTextField" prefHeight="27.0" prefWidth="643.0" promptText="enter your name" style="-fx-background-color: #b4f5eb;" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </TextField>
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="220.0" text="Name:" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="220.0" text="Name:" textFill="#b4f5eb">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
          </children>
       </GridPane>
       <Pane layoutX="7.0" layoutY="7.0" prefHeight="54.0" prefWidth="586.0">
          <children>
-            <Label layoutX="198.0" layoutY="3.0" text="New User Registration">
+            <Label layoutX="198.0" layoutY="3.0" text="New User Registration" textFill="#b4f5eb">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></Label>
-            <Label fx:id="infoLabel" alignment="CENTER" layoutX="2.0" layoutY="32.0" prefHeight="17.0" prefWidth="586.0" text="info" />
+            <Label fx:id="infoLabel" alignment="CENTER" layoutX="2.0" layoutY="32.0" prefHeight="17.0" prefWidth="586.0" text="info" textFill="#b4f5eb">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
          </children>
       </Pane>
       <ButtonBar layoutX="386.0" layoutY="346.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-          <Button fx:id="registerButton" defaultButton="true" mnemonicParsing="false" onAction="#onRegisterButtonPressed" text="Register" />
-            <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#onCancelButtonPressed" text="Cancel" />
+          <Button fx:id="registerButton" defaultButton="true" mnemonicParsing="false" onAction="#onRegisterButtonPressed" style="-fx-background-color: #2554C7;" text="Register" textFill="#b4f5eb" />
+            <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#onCancelButtonPressed" style="-fx-background-color: #2554C7;" text="Cancel" textFill="#b4f5eb" />
         </buttons>
       </ButtonBar>
-      <Button fx:id="okButton" layoutX="271.0" layoutY="353.0" mnemonicParsing="false" onAction="#onOkButtonPressed" text="OK" />
+      <Button fx:id="okButton" layoutX="271.0" layoutY="353.0" mnemonicParsing="false" onAction="#onOkButtonPressed" style="-fx-background-color: #2554C7;" text="OK" textFill="#b4f5eb" />
    </children>
 </AnchorPane>
