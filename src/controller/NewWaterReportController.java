@@ -118,6 +118,7 @@ public class NewWaterReportController implements Initializable {
         String waterConditon = (String) waterConditionComboBox.getValue();
 
         mainApplication.db.saveWaterSourceReport(reporterName, dateAndTime, "1", locationTextField.getText(), waterType, waterConditon);
+        mainApplication.gotoHome();
         //System.out.println(waterTypeComboBox.getValue());
     }
 }

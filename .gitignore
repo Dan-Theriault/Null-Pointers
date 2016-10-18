@@ -2,3 +2,4 @@
 .gitignore
 .idea/
 Null-Pointers.iml
+out/
