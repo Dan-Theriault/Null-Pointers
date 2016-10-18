@@ -86,6 +86,13 @@ public class MainFXApplication extends Application {
 
     }
 
+    public void goToViewSourceReports() throws Exception {
+
+        ViewSourceReportsController newSourceController = (ViewSourceReportsController) replaceSceneContent("../view/viewSourceReports.fxml");
+        newSourceController.setApp(this);
+
+    }
+
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setBuilderFactory(new JavaFXBuilderFactory());

@@ -54,4 +54,11 @@ public class HomeController implements Initializable{
         mainApplication.goToCreateReport();
 
     }
+
+    @FXML
+    private void viewSourceReports() throws Exception {
+
+        mainApplication.goToViewSourceReports();
+
+    }
 }

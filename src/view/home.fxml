@@ -11,14 +11,15 @@
    <children>
       <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <content>
-            <Pane blendMode="DARKEN" prefHeight="57.0" prefWidth="598.0">
+            <Pane blendMode="DARKEN" prefHeight="114.0" prefWidth="598.0">
                <children>
                   <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SafeWater" />
                   <Button fx:id="logoutButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutPressed" text="Logout" />
                   <Button fx:id="usersButton" layoutX="100.0" layoutY="16.0" mnemonicParsing="false" onAction="#onUsersButtonPressed" text="Users" />
                   <Button layoutX="164.0" layoutY="16.0" mnemonicParsing="false" onAction="#onRequestsButtonPressed" text="Requests" />
                   <Button fx:id="profileButton" layoutX="250.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleProfilePressed" text="My Profile" />
-                  <Button layoutX="344.0" layoutY="16.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="105.0" onAction="#handleCreateReportPressed" text="Create Report" />
+                  <Button layoutX="344.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleCreateReportPressed" prefHeight="27.0" prefWidth="105.0" text="Create Report" />
+                  <Button layoutX="17.0" layoutY="57.0" mnemonicParsing="false" onAction="#viewSourceReports" prefHeight="27.0" prefWidth="161.0" text="View Source Reports" />
                </children>
                <opaqueInsets>
                   <Insets bottom="2.0" />

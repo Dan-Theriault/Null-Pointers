@@ -198,4 +198,18 @@ public class Database {
         setGlobalUser(findUser(username));
     }
 
+    public void saveWaterSourceReport(String name, String date, String reportNum, String location, String waterType, String waterCondition) {
+
+        MongoCollection<Document> sourceReports = db.getCollection("sourceReports");
+        Document newReport = new Document("reporterName", name)
+                .append("reportDate", date)
+                .append("reportNumber", reportNum)
+                .append("reportLocation", location)
+                .append("waterType", waterType)
+                .append("waterCondition", waterCondition);
+
+        sourceReports.insertOne(newReport);
+
+    }
+
 }
