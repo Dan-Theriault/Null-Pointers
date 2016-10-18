@@ -47,4 +47,11 @@ public class HomeController implements Initializable{
         mainApplication.gotoProfile();
 
     }
+
+    @FXML
+    private void handleCreateReportPressed() throws Exception {
+
+        mainApplication.goToCreateReport();
+
+    }
 }

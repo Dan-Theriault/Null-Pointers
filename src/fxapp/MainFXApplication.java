@@ -79,6 +79,13 @@ public class MainFXApplication extends Application {
 
     }
 
+    public void goToCreateReport() throws Exception {
+
+        NewWaterReportController newWaterController = (NewWaterReportController) replaceSceneContent("../view/newWaterReport.fxml");
+        newWaterController.setApp(this);
+
+    }
+
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setBuilderFactory(new JavaFXBuilderFactory());
