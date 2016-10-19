@@ -48,15 +48,27 @@ public class ViewSourceReportsController implements Initializable {
 
     private boolean loaded = false;
 
+    /**
+     * sets the main application for the controller
+     * @param application the application to be set
+     */
     public void setApp(MainFXApplication application) {
         this.mainApplication = application;
     }
 
+    /**
+     * initialize the controller
+     * @param location the url location
+     * @param resources the bundle of resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
+    /**
+     * handler for list view click
+     */
     @FXML
     private void onListViewClicked() {
         int newIndex = reportList.getSelectionModel().getSelectedIndex();
@@ -85,6 +97,9 @@ public class ViewSourceReportsController implements Initializable {
         }
     }
 
+    /**
+     * handler for mouse moved
+     */
     @FXML
     private void onMouseMoved() {
         if (!loaded) {
@@ -97,6 +112,10 @@ public class ViewSourceReportsController implements Initializable {
         }
     }
 
+    /**
+     * handler for back button
+     * @throws Exception
+     */
     @FXML
     private void backButtonPressed() throws Exception {
 

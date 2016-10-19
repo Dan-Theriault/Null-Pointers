@@ -45,10 +45,19 @@ public class NewUserRegistrationController implements Initializable {
 
     private MainFXApplication mainApplication;
 
+    /**
+     * sets the main application for this controller
+     * @param application
+     */
     public void setApp(MainFXApplication application) {
         this.mainApplication = application;
     }
 
+    /**
+     * initializes the controller
+     * @param location the url location
+     * @param resources the bundle of resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         accountTypeComboBox.setItems(getAccountTypes());
@@ -56,12 +65,19 @@ public class NewUserRegistrationController implements Initializable {
         okButton.setVisible(false);
     }
 
+    /**
+     * gets the account types from the account type enum
+     * @return the list of account types
+     */
     private static ObservableList<AccountType> getAccountTypes() {
         ObservableList<AccountType> list = FXCollections.observableArrayList();
         list.addAll(AccountType.values());
         return list;
     }
 
+    /**
+     * handler for register button press
+     */
     @FXML
     public void onRegisterButtonPressed() {
         if (!passwordTextField.getText().equals(confirmPasswordTextField
@@ -87,11 +103,19 @@ public class NewUserRegistrationController implements Initializable {
         }
     }
 
+    /**
+     * handler for cancel button press
+     * @throws Exception
+     */
     @FXML
     private void onCancelButtonPressed() throws Exception {
         mainApplication.gotoWelcome();
     }
 
+    /**
+     * handler for ok button press
+     * @throws Exception
+     */
     @FXML
     private void onOkButtonPressed() throws Exception {
         mainApplication.gotoWelcome();

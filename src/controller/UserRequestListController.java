@@ -52,10 +52,18 @@ public class UserRequestListController implements Initializable {
         this.mainApplication = application;
     }
 
+    /**
+     * initializes the controller
+     * @param location the url location
+     * @param resources the resource bundle
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
 
+    /**
+     * handler for list view click
+     */
     @FXML
     private void onListViewClicked() {
         int newIndex = userListView.getSelectionModel().getSelectedIndex();
@@ -64,9 +72,10 @@ public class UserRequestListController implements Initializable {
         }
     }
 
+    /**
+     * handler for mouse moved
+     */
     @FXML
-    //This is a very temporary solution. I'm not sure how to solve this issue.
-    //For now, the list loads when the mouse is moved.
     private void onMouseMoved() {
         if (!loaded) {
             loaded = true;
@@ -74,11 +83,19 @@ public class UserRequestListController implements Initializable {
         }
     }
 
+    /**
+     * handler for back button press
+     * @throws Exception
+     */
     @FXML
     private void onBackButtonPressed() throws Exception {
         mainApplication.gotoHome();
     }
 
+    /**
+     * handler for reject button press
+     * @throws Exception
+     */
     @FXML
     private void onRejectButtonPressed() throws Exception {
         mainApplication.db.deleteRequest(currentUser.getUsername());
@@ -86,6 +103,10 @@ public class UserRequestListController implements Initializable {
         loadList();
     }
 
+    /**
+     * handler for accept button press
+     * @throws Exception
+     */
     @FXML
     private void onAcceptButtonPressed() throws Exception {
 
@@ -103,6 +124,9 @@ public class UserRequestListController implements Initializable {
 
     }
 
+    /**
+     * loads the list of user names
+     */
     private void loadList() {
         //Set the list of users' names for the ListView
         ArrayList<String> userNames = new ArrayList<>();
@@ -112,6 +136,10 @@ public class UserRequestListController implements Initializable {
         userListView.setItems(items);
     }
 
+    /**
+     * handles when a list item is selected
+     * @param index the index that was selected
+     */
     private void selectListItem(int index) {
         if (index == -1) {
             currentIndex = index;

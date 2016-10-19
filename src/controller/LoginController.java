@@ -28,15 +28,28 @@ public class LoginController implements Initializable{
 
     private MainFXApplication mainApplication;
 
+    /**
+     * sets the main application for the controller
+     * @param application the application to set
+     */
     public void setApp(MainFXApplication application){
         this.mainApplication = application;
     }
 
+    /**
+     * initializes the controller
+     * @param location the url location
+     * @param resources the bundle of resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
+    /**
+     * handler for ok button press
+     * @throws Exception
+     */
     @FXML
     private void onOkButtonPressed() throws Exception {
         Boolean isLoginValid = mainApplication.db.logIn(userField.getText(),
@@ -57,6 +70,10 @@ public class LoginController implements Initializable{
 
     }
 
+    /**
+     * handler for cancel button press
+     * @throws Exception
+     */
     @FXML
     private void onCancelButtonPressed() throws Exception {
         mainApplication.gotoWelcome();
