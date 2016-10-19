@@ -67,6 +67,11 @@ public class Database {
         }
     }
 
+    /**
+     * Performs a search of users based on the username identifer
+     * @param username string holding user identifier
+     * @return user object with username matching given username
+     */
     public User findUser(String username) {
 
         FindIterable<Document> iterable = db.getCollection("users").find(new Document("username", username));
@@ -89,6 +94,13 @@ public class Database {
         return userArray[0];
     }
 
+    /**
+     * Registers a new user to the database
+     * @param name          real name of user
+     * @param username      user identifier used by application
+     * @param password      password required to login
+     * @param accountType   account type, must be user, worker, manager, or admin
+     */
     public void registerUser(String name, String username, String password,
             AccountType accountType) {
 
@@ -101,6 +113,13 @@ public class Database {
         registrations.insertOne(newUser);
     }
 
+    /**
+     * Approves a pending registration
+     * @param name       real name of user
+     * @param username   user identifier used by application
+     * @param password   password required to login
+     * @param accountType type of account, must be user, worker, manager, or admin. Controls permissions
+     */
     public void confirmUser(String name, String username, String password, AccountType accountType) {
 
         System.out.println("confirm user");
@@ -118,6 +137,10 @@ public class Database {
 
     }
 
+    /**
+     * Gets a list of all users of the application
+     * @return ArrayList<User> of all confirmed users in database
+     */
     public ArrayList<User> getUsers() {
         System.out.println("in get users");
         FindIterable<Document> iterable = db.getCollection("users").find();
@@ -140,6 +163,10 @@ public class Database {
         return userList;
     }
 
+    /**
+     * Get a list of all pending user registration requests
+     * @return ArrayList<User> containing all pending users
+     */
     public ArrayList<User> getRequests() {
         FindIterable<Document> iterable = db.getCollection("registrations").find();
 
@@ -158,6 +185,10 @@ public class Database {
         return requestsList;
     }
 
+    /**
+     * Return a list of all water source reports
+     * @return ArrayList<SourceReport> containing all source reports in database
+     */
     public ArrayList<SourceReport> getReports() {
         FindIterable<Document> iterable = db.getCollection("sourceReports").find();
 
@@ -179,10 +210,18 @@ public class Database {
         return reportList;
     }
 
+    /**
+     * Deny a pending request for account registration
+     * @param username identifier for denied pending user
+     */
     public void deleteRequest(String username) {
         db.getCollection("registrations").deleteOne(eq("username", username));
     }
 
+    /**
+     * Delete an existing approved user
+     * @param username  identifier for deleted user
+     */
     public void deleteUser(String username) {
 
         db.getCollection("users").deleteOne(eq("username", username));
@@ -201,6 +240,13 @@ public class Database {
 
     }
 
+    /**
+     * Push modifications to user profile to database
+     * @param title         Mr., Mrs., etc.
+     * @param name          real name of user
+     * @param email         email address of user
+     * @param homeAddress   home / mailing address of user
+     */
     public void updateUser(String title, String name, String email, String homeAddress) {
 
         String username = globalUser.getUsername();
@@ -217,6 +263,15 @@ public class Database {
         setGlobalUser(findUser(username));
     }
 
+    /**
+     * Submit a new water source report to the database
+     * @param name          identifier (username) of reporter
+     * @param date          timestamp for report
+     * @param reportNum     unique identifier of report
+     * @param location      location information (coordinates) for report
+     * @param waterType     
+     * @param waterCondition
+     */
     public void saveWaterSourceReport(String name, String date, String reportNum, String location, String waterType, String waterCondition) {
 
         MongoCollection<Document> sourceReports = db.getCollection("sourceReports");
