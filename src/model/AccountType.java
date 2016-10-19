@@ -10,6 +10,10 @@ public enum AccountType {
     ADMIN("ADMIN");
     private String accountTypeValue;
 
+    /**
+     * constructor for AccountType
+     * @param value
+     */
     AccountType(String value) {
         this.accountTypeValue = value;
     }

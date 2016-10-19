@@ -95,6 +95,9 @@ public class ProfileController implements Initializable {
         }
     }
 
+    /**
+     * handler for save changes press
+     */
     @FXML
     private void saveChangesPressed() {
 

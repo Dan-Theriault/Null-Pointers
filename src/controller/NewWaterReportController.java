@@ -80,6 +80,11 @@ public class NewWaterReportController implements Initializable {
     }
 
 
+    /**
+     * initializes the controller
+     * @param location the url location
+     * @param resources the bundle of resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -89,6 +94,10 @@ public class NewWaterReportController implements Initializable {
 
     }
 
+    /**
+     * handler for back button press
+     * @throws Exception
+     */
     @FXML
     public void backButtonPressed() throws Exception {
 
@@ -96,6 +105,10 @@ public class NewWaterReportController implements Initializable {
 
     }
 
+    /**
+     * handler for mouse moved
+     * @throws Exception
+     */
     @FXML
     public void onMouseMoved() throws Exception {
         if (!loaded) {
@@ -113,6 +126,10 @@ public class NewWaterReportController implements Initializable {
 
     }
 
+    /**
+     * handler for save report press
+     * @throws Exception
+     */
     @FXML
     public void onSaveReportPressed() throws Exception {
 

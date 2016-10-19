@@ -228,12 +228,20 @@ public class Database {
 
     }
 
+    /**
+     * returns the current global user for the application
+     * @return the current global user
+     */
     public User getGlobalUser() {
 
         return globalUser;
 
     }
 
+    /**
+     * sets the global user for the application
+     * @param newUser the user that will become the new global user
+     */
     public void setGlobalUser(User newUser) {
 
         this.globalUser = newUser;
@@ -286,6 +294,10 @@ public class Database {
 
     }
 
+    /**
+     * fetches how many reports are already in the database and calculates next report number
+     * @return the next report number
+     */
     public int getNewReportNumber() {
         FindIterable<Document> iterable = db.getCollection("sourceReports").find();
 

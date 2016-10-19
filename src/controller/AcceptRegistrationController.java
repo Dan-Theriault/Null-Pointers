@@ -13,10 +13,19 @@ public class AcceptRegistrationController implements Initializable {
 
     private MainFXApplication mainApplication;
 
+    /**
+     * sets the main application for the controller
+     * @param application
+     */
     public void setApp(MainFXApplication application) {
         this.mainApplication = application;
     }
 
+    /**
+     * initializes the controller
+     * @param location the url location
+     * @param resources the bundle of resources to initialize
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

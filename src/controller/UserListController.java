@@ -49,14 +49,26 @@ public class UserListController implements Initializable {
 
     private boolean loaded = false;
 
+    /**
+     * sets the main application for the controller
+     * @param application the application to set
+     */
     public void setApp(MainFXApplication application) {
         this.mainApplication = application;
     }
 
+    /**
+     * initializes the controller
+     * @param location the url location
+     * @param resources the bundle of resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
 
+    /**
+     * handler for list view click
+     */
     @FXML
     private void onListViewClicked() {
         int newIndex = userListView.getSelectionModel().getSelectedIndex();
@@ -85,9 +97,10 @@ public class UserListController implements Initializable {
         }
     }
 
+    /**
+     * handler for mouse moved
+     */
     @FXML
-    //This is a very temporary solution. I'm not sure how to solve this issue.
-    //For now, the list loads when the mouse is moved.
     private void onMouseMoved() {
         if (!loaded) {
             loaded = true;
@@ -100,6 +113,10 @@ public class UserListController implements Initializable {
         }
     }
 
+    /**
+     * handler for back button press
+     * @throws Exception
+     */
     @FXML
     private void onBackButtonPressed() throws Exception {
         mainApplication.gotoHome();
