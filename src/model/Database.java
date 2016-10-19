@@ -276,7 +276,7 @@ public class Database {
      * @param name          identifier (username) of reporter
      * @param date          timestamp for report
      * @param reportNum     unique identifier of report
-     * @param location      location information (coordinates) for report
+     * @param location      location name
      * @param waterType
      * @param waterCondition
      */
