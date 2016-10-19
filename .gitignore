@@ -2,5 +2,5 @@
 .gitignore
 .idea/
 Null-Pointers.iml
-out/
+/out
 .gradle/

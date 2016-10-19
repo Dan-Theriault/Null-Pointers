@@ -107,6 +107,8 @@ public class NewWaterReportController implements Initializable {
             dateAndTime = dateFormat.format(date);
             dateAndTimeLabel.setText(dateAndTime);
 
+            reportNumberLabel.setText(String.valueOf(mainApplication.db.getNewReportNumber()));
+
         }
 
     }
@@ -117,7 +119,9 @@ public class NewWaterReportController implements Initializable {
         String waterType = (String) waterTypeComboBox.getValue();
         String waterConditon = (String) waterConditionComboBox.getValue();
 
-        mainApplication.db.saveWaterSourceReport(reporterName, dateAndTime, "1", locationTextField.getText(), waterType, waterConditon);
+        mainApplication.db.saveWaterSourceReport(reporterName, dateAndTime,
+                String.valueOf(mainApplication.db.getNewReportNumber()),
+                locationTextField.getText(), waterType, waterConditon);
         mainApplication.gotoHome();
         //System.out.println(waterTypeComboBox.getValue());
     }

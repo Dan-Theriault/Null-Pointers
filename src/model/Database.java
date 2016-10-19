@@ -231,4 +231,25 @@ public class Database {
 
     }
 
+    public int getNewReportNumber() {
+        FindIterable<Document> iterable = db.getCollection("sourceReports").find();
+
+        ArrayList<SourceReport> reportList = new ArrayList<>();
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(Document document) {
+                SourceReport report = new SourceReport(
+                        (String) document.get("reporterName"),
+                        (String) document.get("reportDate"),
+                        (String) document.get("reportNumber"),
+                        (String) document.get("reportLocation"),
+                        (String) document.get("waterType"),
+                        (String) document.get("waterCondition")
+                );
+                reportList.add(report);
+            }
+        });
+        return reportList.size() + 1;
+    }
+
 }
