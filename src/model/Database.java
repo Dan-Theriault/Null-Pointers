@@ -269,7 +269,7 @@ public class Database {
      * @param date          timestamp for report
      * @param reportNum     unique identifier of report
      * @param location      location information (coordinates) for report
-     * @param waterType     
+     * @param waterType
      * @param waterCondition
      */
     public void saveWaterSourceReport(String name, String date, String reportNum, String location, String waterType, String waterCondition) {
@@ -286,6 +286,10 @@ public class Database {
 
     }
 
+    /**
+     * generate a new unique report number, incremented from last report number
+     * @return unique report number
+     */
     public int getNewReportNumber() {
         FindIterable<Document> iterable = db.getCollection("sourceReports").find();
 
