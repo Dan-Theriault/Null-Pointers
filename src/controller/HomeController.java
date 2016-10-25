@@ -40,8 +40,6 @@ public class HomeController implements Initializable{
     @FXML
     private void handleLogoutPressed() throws Exception {
         mainApplication.gotoWelcome();
-
-
     }
 
     /**
@@ -83,6 +81,16 @@ public class HomeController implements Initializable{
         mainApplication.goToCreateReport();
 
     }
+
+    /**
+     * handler for the "Report Map" button
+     * @throws Exception
+     */
+    @FXML
+    private void handleReportMapPressed() throws Exception {
+        mainApplication.goToMapView();
+    }
+
 
     /**
      * handler for view source reports button pressed

@@ -138,6 +138,15 @@ public class MainFXApplication extends Application {
     }
 
     /**
+     * switches scene to view map of source reports
+     * @throws Exception
+     */
+    public void goToMapView() throws Exception {
+        MapViewController newMapController = (MapViewController) replaceSceneContent("../view/mapView.fxml");
+        newMapController.setApp(this);
+    }
+
+    /**
      * function to help switch between scenes
      * @param fxml the fxml of the new scene
      * @return the controller of the new scene
