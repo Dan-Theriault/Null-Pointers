@@ -199,25 +199,14 @@ public class Database {
         ArrayList<SourceReport> reportList = new ArrayList<>();
         iterable.forEach(new Block<Document>() {
 
-            GeocodingService geocodingService = new GeocodingService();
-            LatLong location = new LatLong(0, 0);
-
             @Override
             public void apply(Document document) {
-                geocodingService.geocode((String) document.get("reportLocation"), (GeocodingResult[] results, GeocoderStatus status) -> {
-                    if( status == GeocoderStatus.ZERO_RESULTS) {
-                        return;
-                    } else {
-                        location = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
-                    }
-                });
 
                 SourceReport report = new SourceReport(
                         (String) document.get("reporterName"),
                         (String) document.get("reportDate"),
                         (String) document.get("reportNumber"),
                         (String) document.get("reportLocation"),    // human readable address
-                        location,                                   // machine readable lat-long
                         (String) document.get("waterType"),
                         (String) document.get("waterCondition")
                 );
