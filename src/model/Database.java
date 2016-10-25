@@ -1,9 +1,5 @@
 package model;
 
-import com.lynden.gmapsfx.javascript.object.LatLong;
-import com.lynden.gmapsfx.service.geocoding.GeocoderStatus;
-import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
-import com.lynden.gmapsfx.service.geocoding.GeocodingService;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
@@ -198,26 +194,13 @@ public class Database {
 
         ArrayList<SourceReport> reportList = new ArrayList<>();
         iterable.forEach(new Block<Document>() {
-
-            GeocodingService geocodingService = new GeocodingService();
-            LatLong location = new LatLong(0, 0);
-
             @Override
             public void apply(Document document) {
-                geocodingService.geocode((String) document.get("reportLocation"), (GeocodingResult[] results, GeocoderStatus status) -> {
-                    if( status == GeocoderStatus.ZERO_RESULTS) {
-                        return;
-                    } else {
-                        location = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
-                    }
-                });
-
                 SourceReport report = new SourceReport(
                         (String) document.get("reporterName"),
                         (String) document.get("reportDate"),
                         (String) document.get("reportNumber"),
-                        (String) document.get("reportLocation"),    // human readable address
-                        location,                                   // machine readable lat-long
+                        (String) document.get("reportLocation"),
                         (String) document.get("waterType"),
                         (String) document.get("waterCondition")
                 );
@@ -318,25 +301,22 @@ public class Database {
     public int getNewReportNumber() {
         FindIterable<Document> iterable = db.getCollection("sourceReports").find();
 
-//        ArrayList<SourceReport> reportList = new ArrayList<>();
-        final int[] reportCount = {0};
+        ArrayList<SourceReport> reportList = new ArrayList<>();
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
-//                SourceReport report = new SourceReport(
-//                        (String) document.get("reporterName"),
-//                        (String) document.get("reportDate"),
-//                        (String) document.get("reportNumber"),
-//                        (String) document.get("reportLocation"),
-//                        (String) document.get("waterType"),
-//                        (String) document.get("waterCondition")
-//                );
-//                reportList.add(report);
-                reportCount[0] += 1;
+                SourceReport report = new SourceReport(
+                        (String) document.get("reporterName"),
+                        (String) document.get("reportDate"),
+                        (String) document.get("reportNumber"),
+                        (String) document.get("reportLocation"),
+                        (String) document.get("waterType"),
+                        (String) document.get("waterCondition")
+                );
+                reportList.add(report);
             }
         });
-      //  return reportList.size() + 1;
-        return reportCount[0] + 1;
+        return reportList.size() + 1;
     }
 
 }

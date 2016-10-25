@@ -8,6 +8,5 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="mongo-java-driver-3.0.0 (2)" level="project" />
-    <orderEntry type="library" name="GMapsFX-2.0.8-SNAPSHOT" level="project" />
   </component>
 </module>
