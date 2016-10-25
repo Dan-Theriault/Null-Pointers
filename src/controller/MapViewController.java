@@ -26,7 +26,12 @@ import model.SourceReport;
 public class MapViewController implements Initializable, MapComponentInitializedListener {
 
         @FXML
-        private Button button;
+        private Button homeButton;
+
+        @FXML
+        private void homeButtonPressed() throws Exception {
+            mainApplication.gotoHome();
+        }
 
         @FXML
         private GoogleMapView mapView;
