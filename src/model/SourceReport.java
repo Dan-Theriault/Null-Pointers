@@ -1,5 +1,7 @@
 package model;
 
+import com.lynden.gmapsfx.javascript.object.LatLong;
+
 /**
  * Created by nickhutchinson on 10/18/16.
  */
@@ -7,15 +9,17 @@ public class SourceReport {
     private String reporter;
     private String date;
     private String reportNumber;
-    private String location;
+    private LatLong location;
+    private String address;
     private String type;
     private String condition;
 
-    public SourceReport(String reporter, String date, String reportNumber,
-                        String location, String type, String condition) {
+    public SourceReport(String reporter, String date, String reportNumber, String address,
+                        LatLong location, String type, String condition) {
         this.reporter = reporter;
         this.date = date;
         this.reportNumber = reportNumber;
+        this.address = address;
         this.location = location;
         this.type = type;
         this.condition = condition;
@@ -45,11 +49,11 @@ public class SourceReport {
         this.reportNumber = reportNumber;
     }
 
-    public String getLocation() {
+    public LatLong getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(LatLong location) {
         this.location = location;
     }
 
@@ -67,5 +71,13 @@ public class SourceReport {
 
     public void setCondition(String condition) {
         this.condition = condition;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
