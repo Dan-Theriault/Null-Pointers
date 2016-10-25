@@ -88,6 +88,12 @@ public class MapViewController implements Initializable, MapComponentInitialized
                 opts.position(reportLocation);
                 Marker reportMarker = new Marker(opts);
                 map.addMarker(reportMarker);
+
+                InfoWindowOptions reportInfo  = new InfoWindowOptions();
+                reportInfo.content("<h2>" + report.getLocation() + "<h2>"
+                                    + "Date: " + report.getDate() + "<br>"
+                                    + "Type: " + report.getType() + "<br>"
+                                    + "Condition" + report.getType() + "<br>");
             }
         }
 }
