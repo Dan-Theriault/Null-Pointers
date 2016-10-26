@@ -20,6 +20,7 @@
                   <Button fx:id="profileButton" layoutX="250.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleProfilePressed" text="My Profile" />
                   <Button layoutX="344.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleCreateReportPressed" prefHeight="27.0" prefWidth="105.0" text="Create Report" />
                   <Button layoutX="17.0" layoutY="57.0" mnemonicParsing="false" onAction="#viewSourceReports" prefHeight="27.0" prefWidth="161.0" text="View Source Reports" />
+                  <Button layoutX="202.0" layoutY="57.0" onAction="#handleReportMapPressed" mnemonicParsing="false" prefHeight="20.0" prefWidth="89.0" text="View Map" />
                </children>
                <opaqueInsets>
                   <Insets bottom="2.0" />

@@ -75,10 +75,13 @@ public class MapViewController implements Initializable, MapComponentInitialized
 
             //Add markers to the map
             for (SourceReport report : reports) {
+                System.out.println("for source report:");
                 geocodingService.geocode(report.getLocation(), (GeocodingResult[] results, GeocoderStatus status) -> {
                     if( status == GeocoderStatus.ZERO_RESULTS) {
+                        System.out.println("zero results");
                         return;
                     } else {
+                        System.out.println("location");
                         location[0] = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                     }
                 });
