@@ -1,10 +1,19 @@
 package controller;
 
+import com.lynden.gmapsfx.javascript.event.UIEventType;
+import com.lynden.gmapsfx.javascript.object.*;
+import com.lynden.gmapsfx.service.geocoding.GeocoderStatus;
+import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
+import com.lynden.gmapsfx.service.geocoding.GeocodingService;
 import fxapp.MainFXApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import model.Database;
+import model.SourceReport;
+import netscape.javascript.JSObject;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /** Controller for the home view.
@@ -30,6 +39,8 @@ public class HomeController implements Initializable{
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
 
     }
 
@@ -102,4 +113,35 @@ public class HomeController implements Initializable{
         mainApplication.goToViewSourceReports();
 
     }
+    private boolean loaded = false;
+
+//    @FXML
+//    private void onMouseMoved() {
+//
+//
+//        if (!loaded) {
+//            loaded = true;
+//            List<SourceReport> reports = mainApplication.db.getReports();
+//            GeocodingService geocodingService = new GeocodingService();
+//
+//            for (SourceReport report : reports) {
+//                String temp = report.getLocation();
+//                System.out.println(temp);
+//                geocodingService.geocode(report.getLocation(), (GeocodingResult[] results, GeocoderStatus status) -> {
+//                    if (status == GeocoderStatus.ZERO_RESULTS) {
+//                        //System.out.println("zero results");
+//                        return;
+//                    } else {
+//                        LatLong tempLatLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
+//                        report.setLatLong(tempLatLong);
+//                        System.out.println(tempLatLong);
+//                    }
+//                });
+//
+//            }
+//        }
+//
+//    }
+
+
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import com.lynden.gmapsfx.javascript.object.LatLong;
 import fxapp.MainFXApplication;
 import javafx.collections.ObservableArray;
 import javafx.fxml.FXML;

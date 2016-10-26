@@ -21,14 +21,27 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import model.Database;
 import model.SourceReport;
+import java.util.ArrayList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import netscape.javascript.JSObject;
+import com.lynden.gmapsfx.MapComponentInitializedListener;
+import com.lynden.gmapsfx.javascript.event.UIEventType;
+import com.lynden.gmapsfx.javascript.object.*;
 
 
 public class MapViewController implements Initializable, MapComponentInitializedListener {
 
+
+
         @FXML
         private Button homeButton;
 
-        @FXML
+    /**
+     * the handler for the home button being pressed
+     * @throws Exception
+     */
+    @FXML
         private void homeButtonPressed() throws Exception {
             mainApplication.gotoHome();
         }
@@ -46,12 +59,20 @@ public class MapViewController implements Initializable, MapComponentInitialized
         Database db = new Database();
         List<SourceReport> reports = db.getReports();
 
-        @Override
+    /**
+     * initializes the view for the page
+     * @param url the url for the page
+     * @param rb the resource bundle for the page
+     */
+    @Override
         public void initialize(URL url, ResourceBundle rb) {
             mapView.addMapInializedListener(this);
         }
 
-        @Override
+    /**
+     * initializes the map and the markers
+     */
+    @Override
         public void mapInitialized() {
 
 
@@ -73,7 +94,8 @@ public class MapViewController implements Initializable, MapComponentInitialized
             final LatLong[] location = {new LatLong(0, 0)};
 
 
-            //Add markers to the map
+
+
             for (SourceReport report : reports) {
                 System.out.println("for source report:");
                 geocodingService.geocode(report.getLocation(), (GeocodingResult[] results, GeocoderStatus status) -> {
@@ -83,20 +105,31 @@ public class MapViewController implements Initializable, MapComponentInitialized
                     } else {
                         System.out.println("location");
                         location[0] = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
+                        LatLong temp = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
+                        System.out.println(results);
+                        MarkerOptions opts = new MarkerOptions();
+                        opts.position(temp);
+                        Marker reportMarker = new Marker(opts);
+
+                        map.addUIEventHandler(reportMarker,
+                                UIEventType.click,
+                                (JSObject obj) -> {
+                                    InfoWindowOptions infoWindowOptions = new InfoWindowOptions();
+                                    infoWindowOptions.content("<h2>" + report.getLocation() + "<h2>"
+                                            + "Date: " + report.getDate() + "<br>"
+                                            + "Type: " + report.getType() + "<br>"
+                                            + "Condition" + report.getType() + "<br>");
+
+                                    InfoWindow window = new InfoWindow(infoWindowOptions);
+                                    window.open(map, reportMarker);
+                                });
+
+                        map.addMarker(reportMarker);
+
                     }
                 });
-                LatLong reportLocation = location[0];
 
-                MarkerOptions opts = new MarkerOptions();
-                opts.position(reportLocation);
-                Marker reportMarker = new Marker(opts);
-                map.addMarker(reportMarker);
-
-                InfoWindowOptions reportInfo  = new InfoWindowOptions();
-                reportInfo.content("<h2>" + report.getLocation() + "<h2>"
-                                    + "Date: " + report.getDate() + "<br>"
-                                    + "Type: " + report.getType() + "<br>"
-                                    + "Condition" + report.getType() + "<br>");
             }
+
         }
 }

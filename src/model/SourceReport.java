@@ -12,6 +12,7 @@ public class SourceReport {
     private String location;
     private String type;
     private String condition;
+    private LatLong latLong;
 
     public SourceReport(String reporter, String date, String reportNumber, String location, String type, String condition) {
         this.reporter = reporter;
@@ -20,6 +21,18 @@ public class SourceReport {
         this.location = location;
         this.type = type;
         this.condition = condition;
+    }
+
+    public void setLatLong(LatLong value) {
+
+        this.latLong = value;
+
+    }
+
+    public LatLong getLatLong() {
+
+        return latLong;
+
     }
 
     public String getReporter() {
