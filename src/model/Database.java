@@ -328,4 +328,20 @@ public class Database {
         return reportCount[0] + 1;
     }
 
+    public void saveWaterPurityReport(String name, String date, String reportNum, String location, String waterCondition, String virus, String contaminant) {
+
+        MongoCollection<Document> purityReports = db.getCollection("purityReports");
+
+        Document newReport = new Document("reporterName", name)
+                .append("reportDate", date)
+                .append("reportNumber", reportNum)
+                .append("reportLocation", location)
+                .append("waterCondition", waterCondition)
+                .append("virusPPM", virus)
+                .append("contaminantPPM", contaminant);
+
+        purityReports.insertOne(newReport);
+
+    }
+
 }

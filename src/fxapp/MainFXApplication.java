@@ -146,6 +146,13 @@ public class MainFXApplication extends Application {
         newMapController.setApp(this);
     }
 
+    public void goToNewPurityReport() throws Exception {
+
+        NewPurityReportController newPurityReportController = (NewPurityReportController) replaceSceneContent("../view/newPurityReport.fxml");
+        newPurityReportController.setApp(this);
+
+    }
+
     /**
      * function to help switch between scenes
      * @param fxml the fxml of the new scene

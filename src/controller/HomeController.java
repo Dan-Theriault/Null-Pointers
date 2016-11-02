@@ -8,6 +8,7 @@ import com.lynden.gmapsfx.service.geocoding.GeocodingService;
 import fxapp.MainFXApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import model.AccountType;
 import model.Database;
 import model.SourceReport;
 import netscape.javascript.JSObject;
@@ -15,6 +16,7 @@ import netscape.javascript.JSObject;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.scene.control.Label;
 
 /** Controller for the home view.
  *
@@ -23,6 +25,9 @@ import java.util.ResourceBundle;
 public class HomeController implements Initializable{
 
     private MainFXApplication mainApplication;
+
+    @FXML
+    private Label statusLabel;
 
     /**
      * sets the main application for the controller
@@ -115,33 +120,22 @@ public class HomeController implements Initializable{
     }
     private boolean loaded = false;
 
-//    @FXML
-//    private void onMouseMoved() {
-//
-//
-//        if (!loaded) {
-//            loaded = true;
-//            List<SourceReport> reports = mainApplication.db.getReports();
-//            GeocodingService geocodingService = new GeocodingService();
-//
-//            for (SourceReport report : reports) {
-//                String temp = report.getLocation();
-//                System.out.println(temp);
-//                geocodingService.geocode(report.getLocation(), (GeocodingResult[] results, GeocoderStatus status) -> {
-//                    if (status == GeocoderStatus.ZERO_RESULTS) {
-//                        //System.out.println("zero results");
-//                        return;
-//                    } else {
-//                        LatLong tempLatLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
-//                        report.setLatLong(tempLatLong);
-//                        System.out.println(tempLatLong);
-//                    }
-//                });
-//
-//            }
-//        }
-//
-//    }
+    @FXML
+    private void handleNewPurityReport() throws Exception {
+
+        String accountType = mainApplication.db.getGlobalUser().getAccountType().getAccountTypeValue();
+
+        if (accountType == "ADMIN" || accountType == "WORKER" || accountType == "MANAGER") {
+
+            mainApplication.goToNewPurityReport();
+
+        } else {
+
+            statusLabel.setText("USER access denied");
+
+        }
+
+    }
 
 
 }
