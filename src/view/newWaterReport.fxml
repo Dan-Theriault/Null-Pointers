@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -7,55 +8,58 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewWaterReportController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #659EC7;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewWaterReportController">
    <children>
-      <Button layoutX="1.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButtonPressed" text="Back" />
-      <Label alignment="CENTER" layoutX="200.0" layoutY="8.0" prefHeight="41.0" prefWidth="243.0" text="New Water Source Report" textAlignment="CENTER">
+      <Button layoutX="1.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButtonPressed" style="-fx-background-color: #2554C7;" text="Back" textFill="#b4f5eb">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></Button>
+      <Label alignment="CENTER" layoutX="200.0" layoutY="8.0" prefHeight="41.0" prefWidth="243.0" text="New Water Source Report" textAlignment="CENTER" textFill="#b4f5eb">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="26.0" layoutY="50.0" prefHeight="27.0" prefWidth="111.0" text="Reporter Name:">
+      <Label layoutX="26.0" layoutY="50.0" prefHeight="27.0" prefWidth="111.0" text="Reporter Name:" textFill="#b4f5eb">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="100.0" prefHeight="27.0" prefWidth="111.0" text="Date and Time:">
+      <Label layoutX="26.0" layoutY="100.0" prefHeight="27.0" prefWidth="111.0" text="Date and Time:" textFill="#b4f5eb">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="150.0" prefHeight="27.0" prefWidth="111.0" text="Report Number:">
+      <Label layoutX="26.0" layoutY="150.0" prefHeight="27.0" prefWidth="111.0" text="Report Number:" textFill="#b4f5eb">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="200.0" prefHeight="27.0" prefWidth="111.0" text="Water Location:">
+      <Label layoutX="26.0" layoutY="200.0" prefHeight="27.0" prefWidth="111.0" text="Water Location:" textFill="#b4f5eb">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="250.0" prefHeight="27.0" prefWidth="111.0" text="Water Type:">
+      <Label layoutX="26.0" layoutY="250.0" prefHeight="27.0" prefWidth="111.0" text="Water Type:" textFill="#b4f5eb">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="300.0" prefHeight="27.0" prefWidth="121.0" text="Water Condition:">
+      <Label layoutX="26.0" layoutY="300.0" prefHeight="27.0" prefWidth="121.0" text="Water Condition:" textFill="#b4f5eb">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="reporterNameLabel" layoutX="166.0" layoutY="49.0" prefHeight="27.0" prefWidth="209.0">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label fx:id="dateAndTimeLabel" layoutX="149.0" layoutY="100.0" prefHeight="27.0" prefWidth="193.0" text="" />
-      <Label fx:id="reportNumberLabel" layoutX="149.0" layoutY="150.0" prefHeight="27.0" prefWidth="193.0" text="">
+      <Label fx:id="reporterNameLabel" layoutX="149.0" layoutY="57.0" prefHeight="27.0" prefWidth="209.0" style="-fx-background-color: #b4f5eb;">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <TextField fx:id="locationTextField" layoutX="147.0" layoutY="200.0" />
-      <ComboBox fx:id="waterTypeComboBox" layoutX="149.0" layoutY="250.0" prefHeight="27.0" prefWidth="167.0" />
-      <ComboBox fx:id="waterConditionComboBox" layoutX="149.0" layoutY="300.0" prefHeight="27.0" prefWidth="167.0" />
-      <Button layoutX="443.0" layoutY="300.0" mnemonicParsing="false" onAction="#onSaveReportPressed" prefHeight="41.0" prefWidth="105.0" text="Save Report" />
+      <Label fx:id="dateAndTimeLabel" layoutX="149.0" layoutY="100.0" prefHeight="27.0" prefWidth="193.0" style="-fx-background-color: #b4f5eb;" text="" />
+      <Label fx:id="reportNumberLabel" layoutX="149.0" layoutY="150.0" prefHeight="27.0" prefWidth="193.0" style="-fx-background-color: #b4f5eb;" text="">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="locationTextField" layoutX="147.0" layoutY="200.0" style="-fx-background-color: #b4f5eb;" />
+      <ComboBox fx:id="waterTypeComboBox" layoutX="149.0" layoutY="250.0" prefHeight="27.0" prefWidth="167.0" style="-fx-background-color: #b4f5eb;" />
+      <ComboBox fx:id="waterConditionComboBox" layoutX="149.0" layoutY="300.0" prefHeight="27.0" prefWidth="167.0" style="-fx-background-color: #b4f5eb;" />
+      <Button layoutX="443.0" layoutY="300.0" mnemonicParsing="false" onAction="#onSaveReportPressed" prefHeight="41.0" prefWidth="105.0" style="-fx-background-color: #2554C7;" text="Save Report" textFill="#b4f5eb" />
    </children>
 </AnchorPane>
