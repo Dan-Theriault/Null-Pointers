@@ -24,6 +24,7 @@
                   <Button layoutX="202.0" layoutY="57.0" mnemonicParsing="false" onAction="#handleReportMapPressed" prefHeight="20.0" prefWidth="89.0" text="View Map" />
                   <Button layoutX="315.0" layoutY="57.0" mnemonicParsing="false" onAction="#handleNewPurityReport" text="Create Purity Report" />
                   <Label fx:id="statusLabel" layoutX="30.0" layoutY="160.0" prefHeight="40.0" prefWidth="189.0" text="" />
+                  <Button layoutX="17.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" onAction="#viewPurityReports" prefWidth="161.0" text="View Purity Reports" />
                </children>
                <opaqueInsets>
                   <Insets bottom="2.0" />

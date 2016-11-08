@@ -328,6 +328,16 @@ public class Database {
         return reportCount[0] + 1;
     }
 
+    /**
+     * saves a new water purity report
+     * @param name worker name
+     * @param date date of the report
+     * @param reportNum number of the report
+     * @param location location of report
+     * @param waterCondition condition of water
+     * @param virus virus ppm
+     * @param contaminant contaminant ppm
+     */
     public void saveWaterPurityReport(String name, String date, String reportNum, String location, String waterCondition, String virus, String contaminant) {
 
         MongoCollection<Document> purityReports = db.getCollection("purityReports");
@@ -342,6 +352,55 @@ public class Database {
 
         purityReports.insertOne(newReport);
 
+    }
+
+    /**
+     * Return a list of all water source reports
+     * @return ArrayList<PurityReport> containing all purity reports in database
+     */
+    public ArrayList<PurityReport> getPurityReports() {
+        FindIterable<Document> iterable = db.getCollection("purityReports").find();
+
+        ArrayList<PurityReport> reportList = new ArrayList<>();
+        iterable.forEach(new Block<Document>() {
+
+            @Override
+            public void apply(Document document) {
+
+                PurityReport report = new PurityReport(
+                        (String) document.get("reporterName"),
+                        (String) document.get("reportDate"),
+                        (String) document.get("reportNumber"),
+                        (String) document.get("reportLocation"),    // human readable address
+                        (String) document.get("waterCondition"),
+                        (String) document.get("contaminantPPM"),
+                        (String) document.get("virusPPM")
+
+                );
+                reportList.add(report);
+            }
+        });
+        return reportList;
+    }
+
+    /**
+     * fetches how many reports are already in the database and calculates next report number
+     * @return the next unique report number
+     */
+    public int getNewPurityReportNumber() {
+        FindIterable<Document> iterable = db.getCollection("purityReports").find();
+
+//        ArrayList<SourceReport> reportList = new ArrayList<>();
+        final int[] reportCount = {0};
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(Document document) {
+
+                reportCount[0] += 1;
+            }
+        });
+        //  return reportList.size() + 1;
+        return reportCount[0] + 1;
     }
 
 }

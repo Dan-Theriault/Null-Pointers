@@ -120,6 +120,10 @@ public class HomeController implements Initializable{
     }
     private boolean loaded = false;
 
+    /**
+     * handler for new purity report press
+     * @throws Exception
+     */
     @FXML
     private void handleNewPurityReport() throws Exception {
 
@@ -134,6 +138,17 @@ public class HomeController implements Initializable{
             statusLabel.setText("USER access denied");
 
         }
+
+    }
+
+    /**
+     * handler for viewing purity reports
+     * @throws Exception
+     */
+    @FXML
+    private void viewPurityReports() throws Exception {
+
+        mainApplication.goToViewPurityReports();
 
     }
 

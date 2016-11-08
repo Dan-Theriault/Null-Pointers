@@ -153,6 +153,13 @@ public class MainFXApplication extends Application {
 
     }
 
+    public void goToViewPurityReports() throws Exception {
+
+        ViewPurityReportsController controller = (ViewPurityReportsController) replaceSceneContent("../view/viewPurityReports.fxml");
+        controller.setApp(this);
+
+    }
+
     /**
      * function to help switch between scenes
      * @param fxml the fxml of the new scene

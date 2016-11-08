@@ -74,6 +74,10 @@ public class NewPurityReportController implements Initializable {
 
     }
 
+    /**
+     * handler for back button press
+     * @throws Exception
+     */
     @FXML
     public void goBack() throws Exception {
 
@@ -97,7 +101,9 @@ public class NewPurityReportController implements Initializable {
             dateAndTime = dateFormat.format(date);
             dateAndTimeLabel.setText(dateAndTime);
 
-            reportNumLabel.setText("temp");
+            //reportNumLabel.setText("temp");
+
+            reportNumLabel.setText(String.valueOf(mainApplication.db.getNewPurityReportNumber()));
 
         }
 
