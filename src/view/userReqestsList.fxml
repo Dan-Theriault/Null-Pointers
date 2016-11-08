@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="461.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserRequestListController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="461.0" prefWidth="600.0" style="-fx-background-color: #659EC7;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserRequestListController">
    <children>
       <GridPane layoutX="1.0" layoutY="5.0" prefHeight="389.0" prefWidth="600.0">
         <columnConstraints>
@@ -22,9 +23,15 @@
           <RowConstraints maxHeight="358.0" minHeight="10.0" prefHeight="358.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ListView fx:id="userListView" onMouseClicked="#onListViewClicked" prefHeight="139.0" prefWidth="180.0" GridPane.rowIndex="1" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="Requests" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="451.0" text="User Details" GridPane.columnIndex="1" />
+            <ListView fx:id="userListView" onMouseClicked="#onListViewClicked" prefHeight="139.0" prefWidth="180.0" style="-fx-background-color: #b4f5eb;" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="Requests" textFill="#b4f5eb">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="451.0" text="User Details" textFill="#b4f5eb" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             <GridPane prefHeight="358.0" prefWidth="402.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="97.0" />
@@ -36,12 +43,30 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label layoutX="10.0" layoutY="32.0" text="Name:" />
-                  <Label layoutX="10.0" layoutY="92.0" text="Account type:" GridPane.rowIndex="2" />
-                  <Label layoutX="10.0" layoutY="212.0" text="Username:" GridPane.rowIndex="1" />
-                  <Label fx:id="nameLabel" layoutX="107.0" layoutY="32.0" text="name" GridPane.columnIndex="1" />
-                  <Label fx:id="usernameLabel" layoutX="107.0" layoutY="92.0" text="username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="accountTypeLabel" layoutX="107.0" layoutY="152.0" text="accountype" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label layoutX="10.0" layoutY="32.0" text="Name:" textFill="#b4f5eb">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="92.0" text="Account type:" textFill="#b4f5eb" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="212.0" text="Username:" textFill="#b4f5eb" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="nameLabel" layoutX="107.0" layoutY="32.0" text="name" textFill="#b4f5eb" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="usernameLabel" layoutX="107.0" layoutY="92.0" text="username" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="accountTypeLabel" layoutX="107.0" layoutY="152.0" text="accountype" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
                </children>
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
@@ -51,10 +76,10 @@
       </GridPane>
       <ButtonBar layoutX="386.0" layoutY="407.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-          <Button fx:id="rejectButton" disable="true" mnemonicParsing="false" onAction="#onRejectButtonPressed" text="Reject" />
-            <Button fx:id="acceptButton" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#onAcceptButtonPressed" text="Accept" />
+          <Button fx:id="rejectButton" disable="true" mnemonicParsing="false" onAction="#onRejectButtonPressed" style="-fx-background-color: #2554C7;" text="Reject" textFill="#b4f5eb" />
+            <Button fx:id="acceptButton" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#onAcceptButtonPressed" style="-fx-background-color: #2554C7;" text="Accept" textFill="#b4f5eb" />
         </buttons>
       </ButtonBar>
-      <Button layoutX="14.0" layoutY="414.0" mnemonicParsing="false" onAction="#onBackButtonPressed" text="Back" />
+      <Button layoutX="14.0" layoutY="414.0" mnemonicParsing="false" onAction="#onBackButtonPressed" style="-fx-background-color: #2554C7;" text="Back" textFill="#b4f5eb" />
    </children>
 </AnchorPane>

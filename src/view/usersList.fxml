@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="461.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserListController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="461.0" prefWidth="600.0" style="-fx-background-color: #659EC7;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserListController">
    <children>
       <GridPane layoutX="1.0" layoutY="5.0" prefHeight="389.0" prefWidth="600.0">
         <columnConstraints>
@@ -22,9 +23,15 @@
           <RowConstraints maxHeight="358.0" minHeight="10.0" prefHeight="358.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ListView fx:id="userListView" onMouseClicked="#onListViewClicked" prefHeight="139.0" prefWidth="180.0" GridPane.rowIndex="1" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="Users" />
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="451.0" text="User Details" GridPane.columnIndex="1" />
+            <ListView fx:id="userListView" onMouseClicked="#onListViewClicked" prefHeight="139.0" prefWidth="180.0" style="-fx-background-color: #b4f5eb;" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="Users" textFill="#b4f5eb">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="451.0" text="User Details" textFill="#b4f5eb" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             <GridPane prefHeight="358.0" prefWidth="402.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="97.0" />
@@ -39,18 +46,54 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Title:" />
-                  <Label layoutX="10.0" layoutY="32.0" text="Name:" GridPane.rowIndex="1" />
-                  <Label layoutX="10.0" layoutY="92.0" text="Account type:" GridPane.rowIndex="3" />
-                  <Label layoutX="10.0" layoutY="152.0" text="Email address:" GridPane.rowIndex="4" />
-                  <Label layoutX="10.0" layoutY="212.0" text="Username:" GridPane.rowIndex="2" />
-                  <Label layoutX="10.0" layoutY="271.0" text="Home address:" GridPane.rowIndex="5" />
-                  <Label fx:id="titleLabel" text="title" GridPane.columnIndex="1" />
-                  <Label fx:id="nameLabel" layoutX="107.0" layoutY="32.0" text="name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="usernameLabel" layoutX="107.0" layoutY="92.0" text="username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label fx:id="accountTypeLabel" layoutX="107.0" layoutY="152.0" text="accountype" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label fx:id="emailAddressLabel" layoutX="107.0" layoutY="212.0" text="emailaddress" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label fx:id="homeAddressLabel" layoutX="107.0" layoutY="271.0" text="homeaddress" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="Title:" textFill="#b4f5eb">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="32.0" text="Name:" textFill="#b4f5eb" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="92.0" text="Account type:" textFill="#b4f5eb" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="152.0" text="Email address:" textFill="#b4f5eb" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="212.0" text="Username:" textFill="#b4f5eb" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="271.0" text="Home address:" textFill="#b4f5eb" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="titleLabel" text="title" textFill="#b4f5eb" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="nameLabel" layoutX="107.0" layoutY="32.0" text="name" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="usernameLabel" layoutX="107.0" layoutY="92.0" text="username" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="accountTypeLabel" layoutX="107.0" layoutY="152.0" text="accountype" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="emailAddressLabel" layoutX="107.0" layoutY="212.0" text="emailaddress" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="homeAddressLabel" layoutX="107.0" layoutY="271.0" text="homeaddress" textFill="#b4f5eb" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
                </children>
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
@@ -60,7 +103,7 @@
       </GridPane>
       <ButtonBar layoutX="386.0" layoutY="407.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-          <Button mnemonicParsing="false" onAction="#onBackButtonPressed" text="Back" />
+          <Button mnemonicParsing="false" onAction="#onBackButtonPressed" style="-fx-background-color: #2554C7;" text="Back" textFill="#b4f5eb" />
         </buttons>
       </ButtonBar>
    </children>
