@@ -152,5 +152,23 @@ public class HomeController implements Initializable{
 
     }
 
+    @FXML
+    private void graphButtonPress() throws Exception {
+
+
+        String accountType = mainApplication.db.getGlobalUser().getAccountType().getAccountTypeValue();
+
+        if (accountType == "MANAGER") {
+
+            mainApplication.goToPurityGraph();
+
+        } else {
+
+            statusLabel.setText("USER access denied");
+
+        }
+
+    }
+
 
 }

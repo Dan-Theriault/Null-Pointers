@@ -160,6 +160,13 @@ public class MainFXApplication extends Application {
 
     }
 
+    public void goToPurityGraph() throws Exception {
+
+        HistoricalReportEntryController controller = (HistoricalReportEntryController) replaceSceneContent("../view/enterHistoricalReport.fxml");
+        controller.setApp(this);
+
+    }
+
     /**
      * function to help switch between scenes
      * @param fxml the fxml of the new scene
