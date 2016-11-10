@@ -48,7 +48,7 @@ public class LoginController implements Initializable{
 
     /**
      * handler for ok button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onOkButtonPressed() throws Exception {
@@ -72,7 +72,7 @@ public class LoginController implements Initializable{
 
     /**
      * handler for cancel button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onCancelButtonPressed() throws Exception {

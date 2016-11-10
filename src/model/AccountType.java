@@ -12,7 +12,7 @@ public enum AccountType {
 
     /**
      * constructor for AccountType
-     * @param value
+     * @param value the value of the accountType
      */
     AccountType(String value) {
         this.accountTypeValue = value;

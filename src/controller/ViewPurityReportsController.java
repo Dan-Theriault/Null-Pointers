@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import model.PurityReport;
-import model.SourceReport;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -72,7 +71,7 @@ public class ViewPurityReportsController implements Initializable {
 
     /**
      * handler for back button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void backPressed() throws Exception {
@@ -86,14 +85,14 @@ public class ViewPurityReportsController implements Initializable {
      */
     @FXML
     private void onMouseMoved() {
-
-        loaded = true;
-        ArrayList<String> locations = new ArrayList<>();
-        reports = mainApplication.db.getPurityReports();
-        locations.addAll(reports.stream().map(PurityReport::getLocation).collect(Collectors.toList()));
-        ObservableList<String> items = FXCollections.observableArrayList(locations);
-        reportList.setItems(items);
-
+        if (!loaded) {
+            loaded = true;
+            ArrayList<String> locations = new ArrayList<>();
+            reports = mainApplication.db.getPurityReports();
+            locations.addAll(reports.stream().map(PurityReport::getLocation).collect(Collectors.toList()));
+            ObservableList<String> items = FXCollections.observableArrayList(locations);
+            reportList.setItems(items);
+        }
     }
 
     /**

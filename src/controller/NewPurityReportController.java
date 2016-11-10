@@ -76,7 +76,7 @@ public class NewPurityReportController implements Initializable {
 
     /**
      * handler for back button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     public void goBack() throws Exception {
@@ -88,7 +88,7 @@ public class NewPurityReportController implements Initializable {
     private boolean loaded = false;
     /**
      * handler for mouse moved
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     public void onMouseMoved() throws Exception {

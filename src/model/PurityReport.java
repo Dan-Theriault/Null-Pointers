@@ -1,6 +1,5 @@
 package model;
 
-import com.lynden.gmapsfx.javascript.object.LatLong;
 
 /**
  * Created by aaronwasserman on 11/2/16.

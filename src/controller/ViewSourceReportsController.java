@@ -114,7 +114,7 @@ public class ViewSourceReportsController implements Initializable {
 
     /**
      * handler for back button
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void backButtonPressed() throws Exception {

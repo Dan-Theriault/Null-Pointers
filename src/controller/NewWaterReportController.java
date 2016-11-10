@@ -1,8 +1,6 @@
 package controller;
 
-import com.lynden.gmapsfx.javascript.object.LatLong;
 import fxapp.MainFXApplication;
-import javafx.collections.ObservableArray;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -97,7 +95,7 @@ public class NewWaterReportController implements Initializable {
 
     /**
      * handler for back button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     public void backButtonPressed() throws Exception {
@@ -108,7 +106,7 @@ public class NewWaterReportController implements Initializable {
 
     /**
      * handler for mouse moved
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     public void onMouseMoved() throws Exception {
@@ -129,17 +127,17 @@ public class NewWaterReportController implements Initializable {
 
     /**
      * handler for save report press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     public void onSaveReportPressed() throws Exception {
 
         String waterType = (String) waterTypeComboBox.getValue();
-        String waterConditon = (String) waterConditionComboBox.getValue();
+        String waterCondition = (String) waterConditionComboBox.getValue();
 
         mainApplication.db.saveWaterSourceReport(reporterName, dateAndTime,
                 String.valueOf(mainApplication.db.getNewReportNumber()),
-                locationTextField.getText(), waterType, waterConditon);
+                locationTextField.getText(), waterType, waterCondition);
         mainApplication.gotoHome();
         //System.out.println(waterTypeComboBox.getValue());
     }

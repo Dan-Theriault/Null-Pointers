@@ -1,7 +1,6 @@
 package controller;
 
 import fxapp.MainFXApplication;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -115,7 +114,7 @@ public class UserListController implements Initializable {
 
     /**
      * handler for back button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onBackButtonPressed() throws Exception {

@@ -1,20 +1,10 @@
 package controller;
 
-import com.lynden.gmapsfx.javascript.event.UIEventType;
-import com.lynden.gmapsfx.javascript.object.*;
-import com.lynden.gmapsfx.service.geocoding.GeocoderStatus;
-import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
-import com.lynden.gmapsfx.service.geocoding.GeocodingService;
 import fxapp.MainFXApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import model.AccountType;
-import model.Database;
-import model.SourceReport;
-import netscape.javascript.JSObject;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.scene.control.Label;
 
@@ -51,7 +41,7 @@ public class HomeController implements Initializable{
 
     /**
      * handler for logout button pressed
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void handleLogoutPressed() throws Exception {
@@ -60,7 +50,7 @@ public class HomeController implements Initializable{
 
     /**
      * handler for users button pressed
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onUsersButtonPressed() throws Exception {
@@ -69,7 +59,7 @@ public class HomeController implements Initializable{
 
     /**
      * handler for requests button pressed
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onRequestsButtonPressed() throws Exception {
@@ -78,7 +68,7 @@ public class HomeController implements Initializable{
 
     /**
      * handler for profile button pressed
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void handleProfilePressed() throws Exception {
@@ -89,7 +79,7 @@ public class HomeController implements Initializable{
 
     /**
      * handler for create report button pressed
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void handleCreateReportPressed() throws Exception {
@@ -100,7 +90,7 @@ public class HomeController implements Initializable{
 
     /**
      * handler for the "Report Map" button
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void handleReportMapPressed() throws Exception {
@@ -110,7 +100,7 @@ public class HomeController implements Initializable{
 
     /**
      * handler for view source reports button pressed
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void viewSourceReports() throws Exception {
@@ -122,14 +112,14 @@ public class HomeController implements Initializable{
 
     /**
      * handler for new purity report press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void handleNewPurityReport() throws Exception {
 
         String accountType = mainApplication.db.getGlobalUser().getAccountType().getAccountTypeValue();
 
-        if (accountType == "ADMIN" || accountType == "WORKER" || accountType == "MANAGER") {
+        if (accountType.equals("ADMIN") || accountType.equals("WORKER") || accountType.equals("MANAGER")) {
 
             mainApplication.goToNewPurityReport();
 
@@ -143,7 +133,7 @@ public class HomeController implements Initializable{
 
     /**
      * handler for viewing purity reports
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void viewPurityReports() throws Exception {
@@ -152,13 +142,17 @@ public class HomeController implements Initializable{
 
     }
 
+    /**
+     * handler for graph button press
+     * @throws Exception the exception to be thrown
+     */
     @FXML
     private void graphButtonPress() throws Exception {
 
 
         String accountType = mainApplication.db.getGlobalUser().getAccountType().getAccountTypeValue();
 
-        if (accountType == "MANAGER") {
+        if (accountType.equals("MANAGER")) {
 
             mainApplication.goToPurityGraph();
 

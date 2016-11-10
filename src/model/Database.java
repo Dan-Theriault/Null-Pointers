@@ -1,9 +1,6 @@
 package model;
 
-import com.lynden.gmapsfx.javascript.object.LatLong;
-import com.lynden.gmapsfx.service.geocoding.GeocoderStatus;
-import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
-import com.lynden.gmapsfx.service.geocoding.GeocodingService;
+
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
@@ -60,7 +57,7 @@ public class Database {
             return false;
         }
         //return isTrue[0];
-        if (isTrue[0] == true) {
+        if (isTrue[0]) {
 
             return true;
 
@@ -72,7 +69,7 @@ public class Database {
     }
 
     /**
-     * Performs a search of users based on the username identifer
+     * Performs a search of users based on the username identifier
      * @param username string holding user identifier
      * @return user object with username matching given username
      */
@@ -283,8 +280,8 @@ public class Database {
      * @param date          timestamp for report
      * @param reportNum     unique identifier of report
      * @param location      location name
-     * @param waterType
-     * @param waterCondition
+     * @param waterType     the type of water
+     * @param waterCondition the condition of the water
      */
     public void saveWaterSourceReport(String name, String date, String reportNum, String location, String waterType, String waterCondition) {
 

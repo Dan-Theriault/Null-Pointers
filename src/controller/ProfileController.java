@@ -1,21 +1,13 @@
 package controller;
 
 import fxapp.MainFXApplication;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
-import model.User;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 /**
  * Created by aaronwasserman on 10/6/16.
@@ -66,7 +58,7 @@ public class ProfileController implements Initializable {
 
     /**
      * is called when the back button is pressed
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     public void backButtonPressed() throws Exception{

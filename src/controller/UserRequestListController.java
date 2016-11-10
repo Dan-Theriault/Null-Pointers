@@ -85,7 +85,7 @@ public class UserRequestListController implements Initializable {
 
     /**
      * handler for back button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onBackButtonPressed() throws Exception {
@@ -94,7 +94,7 @@ public class UserRequestListController implements Initializable {
 
     /**
      * handler for reject button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onRejectButtonPressed() throws Exception {
@@ -105,7 +105,7 @@ public class UserRequestListController implements Initializable {
 
     /**
      * handler for accept button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onAcceptButtonPressed() throws Exception {
@@ -145,7 +145,7 @@ public class UserRequestListController implements Initializable {
             currentIndex = index;
             nameLabel.setText("name");
             usernameLabel.setText("username");
-            accountTypeLabel.setText("accouttype");
+            accountTypeLabel.setText("accountType");
 
             rejectButton.setDisable(true);
             acceptButton.setDisable(true);

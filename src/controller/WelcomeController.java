@@ -35,7 +35,7 @@ public class WelcomeController implements Initializable{
 
     /**
      * handler for login button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onLoginButtonPressed() throws Exception {
@@ -44,7 +44,7 @@ public class WelcomeController implements Initializable{
 
     /**
      * handler for register button press
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
     private void onRegisterButtonPressed() throws Exception {

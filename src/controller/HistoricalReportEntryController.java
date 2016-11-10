@@ -1,21 +1,16 @@
 package controller;
 
-import com.lynden.gmapsfx.javascript.object.LatLong;
+
 import fxapp.MainFXApplication;
-import javafx.collections.ObservableArray;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
@@ -44,7 +39,7 @@ public class HistoricalReportEntryController implements Initializable{
     ObservableList<String> impurities =
             FXCollections.observableArrayList(
                     "Virus",
-                    "Contaminent"
+                    "Contaminant"
             );
 
     ObservableList<Integer> years =
@@ -76,7 +71,7 @@ public class HistoricalReportEntryController implements Initializable{
 
     /**
      * handler for mouse moved
-     * @throws Exception
+     * @throws Exception the exception that will be thrown
      */
     @FXML
     public void onMouseMoved() throws Exception {
@@ -87,7 +82,7 @@ public class HistoricalReportEntryController implements Initializable{
 
     /**
      * handler for back button press
-     * @throws Exception
+     * @throws Exception the exception that will be thrown
      */
     @FXML
     public void cancelButtonPressed() throws Exception {

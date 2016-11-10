@@ -21,13 +21,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import model.Database;
 import model.SourceReport;
-import java.util.ArrayList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import netscape.javascript.JSObject;
-import com.lynden.gmapsfx.MapComponentInitializedListener;
+
 import com.lynden.gmapsfx.javascript.event.UIEventType;
-import com.lynden.gmapsfx.javascript.object.*;
 
 
 public class MapViewController implements Initializable, MapComponentInitializedListener {
@@ -39,7 +35,7 @@ public class MapViewController implements Initializable, MapComponentInitialized
 
     /**
      * the handler for the home button being pressed
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @FXML
         private void homeButtonPressed() throws Exception {
@@ -91,7 +87,7 @@ public class MapViewController implements Initializable, MapComponentInitialized
 
             map = mapView.createMap(mapOptions);
             GeocodingService geocodingService = new GeocodingService();
-            final LatLong[] location = {new LatLong(0, 0)};
+
 
 
 
@@ -101,12 +97,10 @@ public class MapViewController implements Initializable, MapComponentInitialized
                 geocodingService.geocode(report.getLocation(), (GeocodingResult[] results, GeocoderStatus status) -> {
                     if( status == GeocoderStatus.ZERO_RESULTS) {
                         System.out.println("zero results");
-                        return;
                     } else {
                         System.out.println("location");
-                        location[0] = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
+                        //location[0] = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                         LatLong temp = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
-                        System.out.println(results);
                         MarkerOptions opts = new MarkerOptions();
                         opts.position(temp);
                         Marker reportMarker = new Marker(opts);

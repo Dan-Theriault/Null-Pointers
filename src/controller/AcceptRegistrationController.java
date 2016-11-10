@@ -15,7 +15,7 @@ public class AcceptRegistrationController implements Initializable {
 
     /**
      * sets the main application for the controller
-     * @param application
+     * @param application the application to be set
      */
     public void setApp(MainFXApplication application) {
         this.mainApplication = application;

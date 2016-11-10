@@ -10,7 +10,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.User;
 
 import java.io.InputStream;
 
@@ -28,7 +27,7 @@ public class MainFXApplication extends Application {
     /**
      * loads initial scene
      * @param primaryStage primary stage to be loaded
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -50,7 +49,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to welcome
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void gotoWelcome() throws Exception {
         WelcomeController welcome = (WelcomeController) replaceSceneContent("../view/welcome.fxml");
@@ -59,7 +58,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to login
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void gotoLogin() throws Exception {
         LoginController login = (LoginController) replaceSceneContent("../view/loginPage.fxml");
@@ -68,7 +67,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to home
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void gotoHome() throws Exception {
         HomeController home = (HomeController) replaceSceneContent("../view/home.fxml");
@@ -77,7 +76,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to new user registration
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void gotoNewUserRegistration() throws Exception {
         NewUserRegistrationController newUserRegistration =
@@ -87,7 +86,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to users list
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void gotoUsersList() throws Exception {
         UserListController userList = (UserListController) replaceSceneContent("../view/usersList.fxml");
@@ -96,7 +95,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to requests list
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void gotoRequestsList() throws Exception {
         UserRequestListController requestListController = (UserRequestListController)
@@ -106,7 +105,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to profile
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void gotoProfile() throws Exception {
 
@@ -117,7 +116,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to create report
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void goToCreateReport() throws Exception {
 
@@ -128,7 +127,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to view source reports
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void goToViewSourceReports() throws Exception {
 
@@ -139,7 +138,7 @@ public class MainFXApplication extends Application {
 
     /**
      * switches scene to view map of source reports
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     public void goToMapView() throws Exception {
         MapViewController newMapController = (MapViewController) replaceSceneContent("../view/mapView.fxml");
@@ -171,7 +170,7 @@ public class MainFXApplication extends Application {
      * function to help switch between scenes
      * @param fxml the fxml of the new scene
      * @return the controller of the new scene
-     * @throws Exception
+     * @throws Exception the exception to be thrown
      */
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader();
