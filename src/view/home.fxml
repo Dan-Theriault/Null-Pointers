@@ -6,26 +6,30 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+<AnchorPane style="-fx-background-color: #659EC7;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
-      <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+      <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #659EC7;">
          <content>
-            <Pane blendMode="DARKEN" prefHeight="222.0" prefWidth="598.0">
+            <Pane blendMode="DARKEN" prefHeight="398.0" prefWidth="598.0" style="-fx-background-color: #659EC7;">
                <children>
-                  <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SafeWater" />
-                  <Button fx:id="logoutButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutPressed" text="Logout" />
-                  <Button fx:id="usersButton" layoutX="100.0" layoutY="16.0" mnemonicParsing="false" onAction="#onUsersButtonPressed" text="Users" />
-                  <Button layoutX="164.0" layoutY="16.0" mnemonicParsing="false" onAction="#onRequestsButtonPressed" text="Requests" />
-                  <Button fx:id="profileButton" layoutX="250.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleProfilePressed" text="My Profile" />
-                  <Button layoutX="344.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleCreateReportPressed" prefHeight="27.0" prefWidth="105.0" text="Create Report" />
-                  <Button layoutX="17.0" layoutY="57.0" mnemonicParsing="false" onAction="#viewSourceReports" prefHeight="27.0" prefWidth="161.0" text="View Source Reports" />
-                  <Button layoutX="202.0" layoutY="57.0" mnemonicParsing="false" onAction="#handleReportMapPressed" prefHeight="20.0" prefWidth="89.0" text="View Map" />
-                  <Button layoutX="315.0" layoutY="57.0" mnemonicParsing="false" onAction="#handleNewPurityReport" text="Create Purity Report" />
-                  <Label fx:id="statusLabel" layoutX="30.0" layoutY="160.0" prefHeight="40.0" prefWidth="189.0" text="" />
-                  <Button layoutX="17.0" layoutY="98.0" mnemonicParsing="false" onAction="#viewPurityReports" prefHeight="27.0" prefWidth="161.0" text="View Purity Reports" />
-                  <Button layoutX="202.0" layoutY="98.0" mnemonicParsing="false" onAction="#graphButtonPress" text="Water Quality Graph" />
+                  <Text fill="#b4f5eb" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SafeWater">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Text>
+                  <Button fx:id="logoutButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleLogoutPressed" style="-fx-background-color: #2554C7;" text="Logout" textFill="#b4f5eb" />
+                  <Button fx:id="usersButton" layoutX="92.0" layoutY="55.0" mnemonicParsing="false" onAction="#onUsersButtonPressed" style="-fx-background-color: #2554C7;" text="Users" textFill="#b4f5eb" />
+                  <Button layoutX="221.0" layoutY="55.0" mnemonicParsing="false" onAction="#onRequestsButtonPressed" style="-fx-background-color: #2554C7;" text="Requests" textFill="#b4f5eb" />
+                  <Button fx:id="profileButton" layoutX="343.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleProfilePressed" style="-fx-background-color: #2554C7;" text="My Profile" textFill="#b4f5eb" />
+                  <Button layoutX="92.0" layoutY="135.0" mnemonicParsing="false" onAction="#handleCreateReportPressed" prefHeight="27.0" prefWidth="105.0" style="-fx-background-color: #2554C7;" text="Create Report" textFill="#b4f5eb" />
+                  <Button layoutX="92.0" layoutY="223.0" mnemonicParsing="false" onAction="#viewSourceReports" prefHeight="27.0" prefWidth="161.0" style="-fx-background-color: #2554C7;" text="View Source Reports" textFill="#b4f5eb" />
+                  <Button layoutX="92.0" layoutY="312.0" mnemonicParsing="false" onAction="#handleReportMapPressed" prefHeight="20.0" prefWidth="89.0" style="-fx-background-color: #2554C7;" text="View Map" textFill="#b4f5eb" />
+                  <Button layoutX="255.0" layoutY="136.0" mnemonicParsing="false" onAction="#handleNewPurityReport" style="-fx-background-color: #2554C7;" text="Create Purity Report" textFill="#b4f5eb" />
+                  <Label fx:id="statusLabel" layoutX="127.0" layoutY="9.0" prefHeight="40.0" prefWidth="189.0" text="" />
+                  <Button layoutX="280.0" layoutY="223.0" mnemonicParsing="false" onAction="#viewPurityReports" prefHeight="27.0" prefWidth="161.0" style="-fx-background-color: #2554C7;" text="View Purity Reports" textFill="#b4f5eb" />
+                  <Button layoutX="236.0" layoutY="312.0" mnemonicParsing="false" onAction="#graphButtonPress" style="-fx-background-color: #2554C7;" text="Water Quality Graph" textFill="#b4f5eb" />
                </children>
                <opaqueInsets>
                   <Insets bottom="2.0" />

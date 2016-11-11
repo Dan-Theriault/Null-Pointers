@@ -6,51 +6,72 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" onMouseMoved="#onMouseMoved" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewPurityReportsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #659EC7;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewPurityReportsController">
    <children>
-      <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#backPressed" text="Back" />
-      <Label alignment="CENTER" layoutX="200.0" layoutY="20.0" prefHeight="36.0" prefWidth="190.0" text="Purity Reports">
+      <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#backPressed" style="-fx-background-color: #2554C7;" text="Back" textFill="#b4f5eb" />
+      <Label alignment="CENTER" layoutX="200.0" layoutY="20.0" prefHeight="36.0" prefWidth="190.0" text="Purity Reports" textFill="#b4f5eb">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
-       <Label layoutX="250.0" layoutY="50.0" prefHeight="27.0" prefWidth="107.0" text="Worker Name:">
+       <Label layoutX="250.0" layoutY="50.0" prefHeight="27.0" prefWidth="107.0" text="Worker Name:" textFill="#b4f5eb">
            <font>
-               <Font size="14.0" />
+               <Font name="System Bold" size="14.0" />
            </font></Label>
-       <Label layoutX="250.0" layoutY="100.0" prefHeight="27.0" prefWidth="107.0" text="Date and Time:">
+       <Label layoutX="250.0" layoutY="100.0" prefHeight="27.0" prefWidth="107.0" text="Date and Time:" textFill="#b4f5eb">
            <font>
-               <Font size="14.0" />
+               <Font name="System Bold" size="14.0" />
            </font>
        </Label>
-       <Label layoutX="250.0" layoutY="150.0" prefHeight="27.0" prefWidth="107.0" text="Report Number:">
+       <Label layoutX="250.0" layoutY="150.0" prefHeight="27.0" prefWidth="107.0" text="Report Number:" textFill="#b4f5eb">
            <font>
-               <Font size="14.0" />
+               <Font name="System Bold" size="14.0" />
            </font></Label>
-       <Label layoutX="250.0" layoutY="200.0" prefHeight="27.0" prefWidth="107.0" text="Water Location:">
+       <Label layoutX="250.0" layoutY="200.0" prefHeight="27.0" prefWidth="107.0" text="Water Location:" textFill="#b4f5eb">
            <font>
-               <Font size="14.0" />
+               <Font name="System Bold" size="14.0" />
            </font></Label>
-       <Label layoutX="250.0" layoutY="250.0" prefHeight="27.0" prefWidth="129.0" text="Overall Condition:">
+       <Label layoutX="250.0" layoutY="250.0" prefHeight="27.0" prefWidth="129.0" text="Overall Condition:" textFill="#b4f5eb">
            <font>
-               <Font size="14.0" />
+               <Font name="System Bold" size="14.0" />
            </font></Label>
-       <Label layoutX="250.0" layoutY="300.0" prefHeight="27.0" prefWidth="107.0" text="Virus PPM:">
+       <Label layoutX="250.0" layoutY="300.0" prefHeight="27.0" prefWidth="107.0" text="Virus PPM:" textFill="#b4f5eb">
            <font>
-               <Font size="14.0" />
+               <Font name="System Bold" size="14.0" />
            </font>
        </Label>
-       <Label layoutX="250.0" layoutY="350.0" prefHeight="27.0" prefWidth="129.0" text="Contaminant PPM:">
+       <Label layoutX="250.0" layoutY="350.0" prefHeight="27.0" prefWidth="129.0" text="Contaminant PPM:" textFill="#b4f5eb">
            <font>
-               <Font size="14.0" />
+               <Font name="System Bold" size="14.0" />
            </font>
        </Label>
-      <ListView fx:id="reportList" onMouseClicked="#onListViewClicked" layoutX="14.0" layoutY="58.0" prefHeight="316.0" prefWidth="200.0" />
-      <Label fx:id="workerLabel" layoutX="379.0" layoutY="50.0" prefHeight="27.0" prefWidth="173.0" text="Label" />
-       <Label fx:id="dateLabel" layoutX="379.0" layoutY="100.0" prefHeight="27.0" prefWidth="173.0" text="Label" />
-       <Label fx:id="reportNumLabel" layoutX="379.0" layoutY="150.0" prefHeight="27.0" prefWidth="173.0" text="Label" />
-       <Label fx:id="locationLabel" layoutX="379.0" layoutY="200.0" prefHeight="27.0" prefWidth="173.0" text="Label" />
-       <Label fx:id="conditionLabel" layoutX="379.0" layoutY="250.0" prefHeight="27.0" prefWidth="173.0" text="Label" />
-       <Label fx:id="virusLabel" layoutX="379.0" layoutY="300.0" prefHeight="27.0" prefWidth="173.0" text="Label" />
-       <Label fx:id="contaminantLabel" layoutX="379.0" layoutY="350.0" prefHeight="27.0" prefWidth="173.0" text="Label" />
+      <ListView fx:id="reportList" layoutX="14.0" layoutY="58.0" onMouseClicked="#onListViewClicked" prefHeight="316.0" prefWidth="200.0" style="-fx-background-color: #b4f5eb;" />
+      <Label fx:id="workerLabel" layoutX="379.0" layoutY="50.0" prefHeight="27.0" prefWidth="173.0" text="Label" textFill="#b4f5eb">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+       <Label fx:id="dateLabel" layoutX="379.0" layoutY="100.0" prefHeight="27.0" prefWidth="173.0" text="Label" textFill="#b4f5eb">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+       <Label fx:id="reportNumLabel" layoutX="379.0" layoutY="150.0" prefHeight="27.0" prefWidth="173.0" text="Label" textFill="#b4f5eb">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+       <Label fx:id="locationLabel" layoutX="379.0" layoutY="200.0" prefHeight="27.0" prefWidth="173.0" text="Label" textFill="#b4f5eb">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+       <Label fx:id="conditionLabel" layoutX="379.0" layoutY="250.0" prefHeight="27.0" prefWidth="173.0" text="Label" textFill="#b4f5eb">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+       <Label fx:id="virusLabel" layoutX="379.0" layoutY="300.0" prefHeight="27.0" prefWidth="173.0" text="Label" textFill="#b4f5eb">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+       <Label fx:id="contaminantLabel" layoutX="379.0" layoutY="350.0" prefHeight="27.0" prefWidth="173.0" text="Label" textFill="#b4f5eb">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>
