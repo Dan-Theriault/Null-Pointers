@@ -512,6 +512,10 @@ public class Database {
 
         MongoCollection<Document> purityReports = db.getCollection("purityReports");
 
+        if (waterCondition == "" || name == "" || date == "") {
+            return false;
+        }
+
         Document newReport = new Document("reporterName", name)
                 .append("reportDate", date)
                 .append("reportNumber", reportNum)
@@ -549,7 +553,7 @@ public class Database {
                 && temp.getVirus().equals(virus)) {
             return true;
         } else {
-            return true;
+            return false;
         }
 
     }
