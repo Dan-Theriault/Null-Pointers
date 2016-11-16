@@ -1,10 +1,13 @@
 package tests;
 
+import model.AccountType;
 import model.Database;
+import model.User;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import org.bson.Document;
 
 
@@ -32,6 +35,9 @@ public class saveWaterPurityReportTests {
     Database test = new Database();
     private Document testReport1;
     private Document testReport2;
+    private static final User testUserUser = new User("Mr.", "Test User",
+    private static final User testUserManager = new User("Mr.", "Test User",
+
 
     /**
      * make the data to be tested
@@ -40,7 +46,7 @@ public class saveWaterPurityReportTests {
     public void setUp() {
         name = "user";
         date = "2016/11/16 11:40:00";
-        reportNum = "7";
+        reportNum = "test";
         location = "earth";
         waterCondition = "Unsafe";
         virus = "1000";
@@ -60,6 +66,8 @@ public class saveWaterPurityReportTests {
                 .append("waterCondition", waterCondition)
                 .append("virusPPM", virus)
                 .append("contaminantPPM", contaminant);
+        test.addUser(testUserUser);
+        test.addUser(testUserManager);
 
     }
 
@@ -71,8 +79,17 @@ public class saveWaterPurityReportTests {
     public void testadded() {
         assertFalse(test.saveWaterPurityReport(name, date, reportNum, location, incorrect,
                 virus, contaminant));
+        test.setGlobalUser(testUserManager);
+        assertTrue(test.saveWaterPurityReport(name, date, reportNum, location, waterCondition,
+                virus, contaminant));
+        test.setGlobalUser(testUserUser);
         assertTrue(test.saveWaterPurityReport(name, date, reportNum, location, waterCondition,
                 virus, contaminant));
     }
+
+    @After
+    public void cleanup() {
+        test.deleteUser(testUserManager.getUsername());;
+        test.deleteUser(testUserUser.getUsername());
 
 }
