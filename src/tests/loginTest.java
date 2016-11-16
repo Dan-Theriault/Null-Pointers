@@ -22,13 +22,13 @@ public class loginTest {
             "TestuserAdmin123", AccountType.ADMIN, "testuser@sample.com",
             "123 Test Rd", "password123Admin");
     private static final User testUserManager = new User("Mr.", "Test User",
-            "Testuser123Manager", AccountType.MANAGER, "testuser@sample.com",
+            "TestuserManager123", AccountType.MANAGER, "testuser@sample.com",
             "123 Test Rd", "password123Manager");
     private static final User testUserWorker = new User("Mr.", "Test User",
-            "Testuser123Worker", AccountType.WORKER, "testuser@sample.com",
+            "TestuserWorker123", AccountType.WORKER, "testuser@sample.com",
             "123 Test Rd", "password123Worker");
     private static final User testUserUser = new User("Mr.", "Test User",
-            "Testuser123User", AccountType.USER, "testuser@sample.com",
+            "TestuserUser123", AccountType.USER, "testuser@sample.com",
             "123 Test Rd", "password123User");
 
 
