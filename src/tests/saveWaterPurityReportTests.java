@@ -36,7 +36,11 @@ public class saveWaterPurityReportTests {
     private Document testReport1;
     private Document testReport2;
     private static final User testUserUser = new User("Mr.", "Test User",
+            "TestuserUser", AccountType.USER, "testuser@sample.com",
+            "123456", "password");
     private static final User testUserManager = new User("Mr.", "Test User",
+            "TestuserManager", AccountType.MANAGER, "testuser@sample.com",
+            "123", "password");
 
 
     /**
