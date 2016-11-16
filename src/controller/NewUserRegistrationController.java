@@ -92,9 +92,9 @@ public class NewUserRegistrationController implements Initializable {
             infoLabel.setText("Please complete all of the fields below.");
             infoLabel.setVisible(true);
         } else {
-            mainApplication.db.registerUser(nameTextField.getText(),
+            System.out.print(mainApplication.db.registerUser(nameTextField.getText(),
                     usernameTextField.getText(), passwordTextField.getText(),
-                    accountTypeComboBox.getValue());
+                    accountTypeComboBox.getValue()));
             infoLabel.setText("You have successfully registered.");
             infoLabel.setVisible(true);
             okButton.setVisible(true);

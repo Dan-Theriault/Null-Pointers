@@ -117,7 +117,7 @@ public class NewPurityReportController implements Initializable {
 
         if (locationTextField.getText() != "" && virusTextField.getText() != "" && contaminantTextField.getText() != "") {
 
-            mainApplication.db.saveWaterPurityReport(workerName, dateAndTime, reportNumLabel.getText(), locationTextField.getText(), waterCondition, virusTextField.getText(), contaminantTextField.getText());
+            System.out.print(mainApplication.db.saveWaterPurityReport(workerName, dateAndTime, reportNumLabel.getText(), locationTextField.getText(), waterCondition, virusTextField.getText(), contaminantTextField.getText()));
             mainApplication.gotoHome();
 
         }

@@ -101,8 +101,9 @@ public class Database {
      * @param username      user identifier used by application
      * @param password      password required to login
      * @param accountType   account type, must be user, worker, manager, or admin
+     * @return Returns true if the user was successfully registered. False if otherwise.
      */
-    public void registerUser(String name, String username, String password,
+    public boolean registerUser(String name, String username, String password,
             AccountType accountType) {
 
         MongoCollection<Document> registrations = db.getCollection("registrations");
@@ -110,8 +111,35 @@ public class Database {
                 .append("username", username)
                 .append("password", password)
                 .append("accountType", accountType.getAccountTypeValue());
-
         registrations.insertOne(newUser);
+
+
+        FindIterable<Document> iterable = db.getCollection("registrations").find(new Document("username", username));
+        final User[] userArray = new User[1];
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(final Document document) {
+                User user = new User((String) document.get("name"),
+                        (String) document.get("username"),
+                        (String) document.get("password"),
+                        AccountType.valueOf((String) document.get("accountType")),
+                        (String) document.get("emailAddress"),
+                        (String) document.get("homeAddress"),
+                        (String) document.get("password"));
+                userArray[0] = user;
+            }
+        });
+
+        User temp = userArray[0];
+        if (temp.getName().equals(name)
+                && temp.getUsername().equals(username)
+                && temp.getPassword().equals(password)
+                && temp.getAccountType().equals(accountType)) {
+            return true;
+        } else {
+            return true;
+        }
     }
 
     /**
@@ -120,8 +148,9 @@ public class Database {
      * @param username   user identifier used by application
      * @param password   password required to login
      * @param accountType type of account, must be user, worker, manager, or admin. Controls permissions
+     * @return Returns true if the user was successfully confrimed into the database. False if otherwise.
      */
-    public void confirmUser(String name, String username, String password, AccountType accountType) {
+    public boolean confirmUser(String name, String username, String password, AccountType accountType) {
 
         System.out.println("confirm user");
 
@@ -135,6 +164,33 @@ public class Database {
                 .append("title", "Mr.");
 
         users.insertOne(newConfirmedUser);
+
+        FindIterable<Document> iterable = db.getCollection("users").find(new Document("username", username));
+        final User[] userArray = new User[1];
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(final Document document) {
+                User user = new User((String) document.get("name"),
+                        (String) document.get("username"),
+                        (String) document.get("password"),
+                        AccountType.valueOf((String) document.get("accountType")),
+                        (String) document.get("emailAddress"),
+                        (String) document.get("homeAddress"),
+                        (String) document.get("password"));
+                userArray[0] = user;
+            }
+        });
+
+        User temp = userArray[0];
+        if (temp.getName().equals(name)
+                && temp.getUsername().equals(username)
+                && temp.getPassword().equals(password)
+                && temp.getAccountType().equals(accountType)) {
+            return true;
+        } else {
+            return true;
+        }
 
     }
 
@@ -216,18 +272,66 @@ public class Database {
     /**
      * Deny a pending request for account registration
      * @param username identifier for denied pending user
+     * @return Returns true if the request was successfully deleted. False if otherwise.
      */
-    public void deleteRequest(String username) {
+    public boolean deleteRequest(String username) {
         db.getCollection("registrations").deleteOne(eq("username", username));
+
+        FindIterable<Document> iterable = db.getCollection("registrations").find(new Document("username", username));
+        final User[] userArray = new User[1];
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(final Document document) {
+                User user = new User((String) document.get("name"),
+                        (String) document.get("username"),
+                        (String) document.get("password"),
+                        AccountType.valueOf((String) document.get("accountType")),
+                        (String) document.get("emailAddress"),
+                        (String) document.get("homeAddress"),
+                        (String) document.get("password"));
+                userArray[0] = user;
+            }
+        });
+
+        if (userArray[0] == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
      * Delete an existing approved user
      * @param username  identifier for deleted user
+     * @return Returns true if the user was successfully deleted. False if otherwise.
      */
-    public void deleteUser(String username) {
+    public boolean deleteUser(String username) {
 
         db.getCollection("users").deleteOne(eq("username", username));
+
+        FindIterable<Document> iterable = db.getCollection("users").find(new Document("username", username));
+        final User[] userArray = new User[1];
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(final Document document) {
+                User user = new User((String) document.get("name"),
+                        (String) document.get("username"),
+                        (String) document.get("password"),
+                        AccountType.valueOf((String) document.get("accountType")),
+                        (String) document.get("emailAddress"),
+                        (String) document.get("homeAddress"),
+                        (String) document.get("password"));
+                userArray[0] = user;
+            }
+        });
+
+        if (userArray[0] == null) {
+            return true;
+        } else {
+            return false;
+        }
 
     }
 
@@ -257,8 +361,9 @@ public class Database {
      * @param name          real name of user
      * @param email         email address of user
      * @param homeAddress   home / mailing address of user
+     * @return Returns true if the user was updated successfully. False if otherwise.
      */
-    public void updateUser(String title, String name, String email, String homeAddress) {
+    public boolean updateUser(String title, String name, String email, String homeAddress) {
 
         String username = globalUser.getUsername();
 
@@ -270,8 +375,34 @@ public class Database {
                         .append("emailAddress", email)
                         .append("homeAddress", homeAddress)
                         .append("title", title));
-
         setGlobalUser(findUser(username));
+
+        FindIterable<Document> iterable = db.getCollection("users").find(new Document("username", username));
+        final User[] userArray = new User[1];
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(final Document document) {
+                User user = new User((String) document.get("name"),
+                        (String) document.get("username"),
+                        (String) document.get("password"),
+                        AccountType.valueOf((String) document.get("accountType")),
+                        (String) document.get("emailAddress"),
+                        (String) document.get("homeAddress"),
+                        (String) document.get("password"));
+                userArray[0] = user;
+            }
+        });
+
+        User temp = userArray[0];
+        if (temp.getTitle().equals(title)
+                && temp.getName().equals(name)
+                && temp.getEmailAddress().equals(email)
+                && temp.getHomeAddress().equals(homeAddress)) {
+            return true;
+        } else {
+            return true;
+        }
     }
 
     /**
@@ -282,8 +413,9 @@ public class Database {
      * @param location      location name
      * @param waterType     the type of water
      * @param waterCondition the condition of the water
+     * @return Returns true if the water source report was successfully saved. False if otherwise.
      */
-    public void saveWaterSourceReport(String name, String date, String reportNum, String location, String waterType, String waterCondition) {
+    public boolean saveWaterSourceReport(String name, String date, String reportNum, String location, String waterType, String waterCondition) {
 
         MongoCollection<Document> sourceReports = db.getCollection("sourceReports");
         Document newReport = new Document("reporterName", name)
@@ -294,6 +426,34 @@ public class Database {
                 .append("waterCondition", waterCondition);
 
         sourceReports.insertOne(newReport);
+
+        FindIterable<Document> iterable = db.getCollection("sourceReports").find(new Document("reportNumber", reportNum));
+        final SourceReport[] reportArray = new SourceReport[1];
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(final Document document) {
+                SourceReport report = new SourceReport((String) document.get("reporterName"),
+                        (String) document.get("reportDate"),
+                        (String) document.get("reportNumber"),
+                        (String) document.get("reportLocation"),
+                        (String) document.get("waterType"),
+                        (String) document.get("waterCondition"));
+                reportArray[0] = report;
+            }
+        });
+
+        SourceReport temp = reportArray[0];
+        if (temp.getReporter().equals(name)
+                && temp.getDate().equals(date)
+                && temp.getReportNumber().equals(reportNum)
+                && temp.getLocation().equals(location)
+                && temp.getType().equals(waterType)
+                && temp.getCondition().equals(waterCondition)) {
+            return true;
+        } else {
+            return true;
+        }
 
     }
 
@@ -334,8 +494,9 @@ public class Database {
      * @param waterCondition condition of water
      * @param virus virus ppm
      * @param contaminant contaminant ppm
+     * @return Returns true if the purity report was successfully saved. False if otherwise.
      */
-    public void saveWaterPurityReport(String name, String date, String reportNum, String location, String waterCondition, String virus, String contaminant) {
+    public boolean saveWaterPurityReport(String name, String date, String reportNum, String location, String waterCondition, String virus, String contaminant) {
 
         MongoCollection<Document> purityReports = db.getCollection("purityReports");
 
@@ -348,6 +509,36 @@ public class Database {
                 .append("contaminantPPM", contaminant);
 
         purityReports.insertOne(newReport);
+
+        FindIterable<Document> iterable = db.getCollection("purityReports").find(new Document("reportNumber", reportNum));
+        final PurityReport[] reportArray = new PurityReport[1];
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(final Document document) {
+                PurityReport report = new PurityReport((String) document.get("reporterName"),
+                        (String) document.get("reportDate"),
+                        (String) document.get("reportNumber"),
+                        (String) document.get("reportLocation"),
+                        (String) document.get("waterCondition"),
+                        (String) document.get("contaminantPPM"),
+                        (String) document.get("virusPPM"));
+                reportArray[0] = report;
+            }
+        });
+
+        PurityReport temp = reportArray[0];
+        if (temp.getReporter().equals(name)
+                && temp.getDate().equals(date)
+                && temp.getReportNumber().equals(reportNum)
+                && temp.getLocation().equals(location)
+                && temp.getCondition().equals(waterCondition)
+                && temp.getContaminant().equals(contaminant)
+                && temp.getVirus().equals(virus)) {
+            return true;
+        } else {
+            return true;
+        }
 
     }
 

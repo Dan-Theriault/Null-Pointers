@@ -109,8 +109,6 @@ public class UserRequestListController implements Initializable {
      */
     @FXML
     private void onAcceptButtonPressed() throws Exception {
-
-
         if (currentUser != null) {
 
             mainApplication.db.confirmUser(currentUser.getName(), currentUser.getUsername(), currentUser.getPassword(), currentUser.getAccountType());
@@ -118,10 +116,6 @@ public class UserRequestListController implements Initializable {
             selectListItem(-1);
             loadList();
         }
-
-
-
-
     }
 
     /**
