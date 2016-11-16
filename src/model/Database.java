@@ -95,6 +95,18 @@ public class Database {
         return userArray[0];
     }
 
+    public void addUser(User user) {
+        MongoCollection<Document> users = db.getCollection("users");
+        Document newUser = new Document("name", user.getName())
+                .append("username", user.getUsername())
+                .append("password", user.getPassword())
+                .append("accountType", user.getAccountType().getAccountTypeValue())
+                .append("emailAddress", user.getEmailAddress())
+                .append("homeAddress", user.getHomeAddress())
+                .append("title", user.getTitle());
+        users.insertOne(newUser);
+    }
+
     /**
      * Registers a new user to the database
      * @param name          real name of user
