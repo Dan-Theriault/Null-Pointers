@@ -53,8 +53,32 @@ Depending on the color of the map, the "back to application" button can be diffi
 
 ### Ivan
 
+Source reports don't save across accounts (3)
+
 ### Aaron
 
 On main application page all buttons are in verb form except for "source reports" and "purity reports" (2)
+
 On Report Water Purity page the cancel button text is cut off (1)
+
 On Report Water Source Page, View Water Source Page, and View Water Purity Page there is no header so it is confusing about what page you are on. (2)
+
+### Amethyst Sanders
+
+Welcome: no app name, no description. 2
+
+View All Reports: different back to application button 1
+
+Profile: needs edited before report can be made, but this is not stated before trying to make the report 4
+
+When Adding a Report: says cancel instead of back to application. Either could work. 1
+
+Purity Reports: acts like there are 4 default reports, but they are not real 3
+
+Source Reports: added reports do not show on other user accounts 3
+
+Edit Profile: after updated the title and the email text  get swapped if you go back to the page 4
+
+Map: slow to update 1
+
+Help: not really helpful 1
