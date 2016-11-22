@@ -35,8 +35,26 @@ Working individually, we compiled lists of usability bugs encountered while usin
 
 ### Dan Theriault
 
+Welcome screen does not convey app identity (1)
+
+The inconsistent button sizes on the home screen are distracting. Center alignment makes this worse (1)
+
+The application describes itself as a water reporting system, which does not accurate describe the breadth of functionality (1)
+
+Submitting reports fails if you have not set up your profile, and this requirement is not well-indicated. You should include a profile setup page in registration, or at least throw an informative error message up (4)
+
+Not all screens have headers / titles, and this can make it hard to keep your place in the application (3)
+
+I had difficulty zooming on the map. There are no buttons shown to do so, and there was no signifier that double-clicking would zoom in. (2)
+
+The position of the "back to application" button is inconsistent (2)
+
+Depending on the color of the map, the "back to application" button can be difficult to see (1)
+
 ### Ivan
 
 ### Aaron
 
-### Amethyst
+On main application page all buttons are in verb form except for "source reports" and "purity reports" (2)
+On Report Water Purity page the cancel button text is cut off (1)
+On Report Water Source Page, View Water Source Page, and View Water Purity Page there is no header so it is confusing about what page you are on. (2)
