@@ -30,3 +30,13 @@ We rated these issues on a 1-4 scale reflecting their frequency and importance t
 4 indicates an issue that is both crippling and frequent. Type 4 issues make the user consider just giving up.
 
 # Execute
+
+Working individually, we compiled lists of usability bugs encountered while using the program.
+
+### Dan Theriault
+
+### Ivan
+
+### Aaron
+
+### Amethyst
