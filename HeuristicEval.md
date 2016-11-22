@@ -47,7 +47,7 @@ Not all screens have headers / titles, and this can make it hard to keep your pl
 
 I had difficulty zooming on the map. There are no buttons shown to do so, and there was no signifier that double-clicking would zoom in. (2)
 
-The position of the "back to application" button is inconsistent (2)
+The position of the "back to application" button is inconsistent (3)
 
 Depending on the color of the map, the "back to application" button can be difficult to see (1)
 
@@ -82,3 +82,19 @@ Edit Profile: after updated the title and the email text  get swapped if you go 
 Map: slow to update 1
 
 Help: not really helpful 1
+
+### Discussion
+
+We met together and discussed the issues we had discovered. We noted the overlap between our lists, but also the more subtle bugs that only one of us had noticed. Three bugs stood out as particularly serious and recurrent:
+
+1. A completed profile is required to submit reports, but this is not conveyed to the user in any location.
+
+We were able to figure out this issue fairly quickly, but a less technical user would likely be extremely confused by this program-breaking and unexplained inability to submit any reports. This bug was filed by multiple evaluators at the highest severity rating.
+
+2. The "Report Water Source", "View Water Source", and "View Water Purity" pages are missing headers. This makes it difficult to know which page you are on.
+
+This bug was also filed by multiple evaluators, but at a medium severity (2/3). In the course of our interactions with the app, this bug caused us to lose track of our place.
+
+3. The positioning of the "back to application" button is inconsistent between the views, and often blends into the similarly-colored map. Taken together, these two issues make it difficult to find.
+
+Multiple evaluators reported this issue. We found ourselves forced to stop, think, and look for this button. We used (and expect most users to use) this button frequently, and it was a constant small annoyance.
